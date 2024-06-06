@@ -1,0 +1,70 @@
+#klaviyo-bis-modal {
+  margin-top: 100px;
+}
+
+.modal-title {
+  @extend .h5;
+  color: $black;
+  font-weight: $font-weight-bold;
+
+  + p {
+    color: $black;
+    margin-top: 10px;
+    font-size: 25px;
+    margin-bottom: 30px;
+  }
+}
+
+#variants.selectpicker {
+  font-size: $font-size-sm;
+  border-radius: $input-border-radius;
+  border: 1px solid $black;
+  margin: 0 -15px;
+  width: calc(100% + 30px);
+  padding: 12px 21px 15px;
+  background-color: transparent;
+  appearance: none;
+  height: 50px;
+  background-color: $white;
+
+  @include media-breakpoint-down('sm'){
+    font-size: 16px;
+  }
+}
+
+#email {
+  margin: 0 -15px;
+  width: calc(100% + 30px);
+
+  @include media-breakpoint-down('sm') {
+    font-size: 16px;
+  }
+}
+
+#completed_message {
+  color: $blue;
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0 !important;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 0;
+
+  .klaviyo-bis-close {
+    display: none !important;
+  }
+}
+
+.small-print {
+  margin-top: 10px;
+  font-size: 12px !important;
+  letter-spacing: 0.05em !important;
+}
+
+.klaviyo-bis-close {
+  font-size: 2rem;
+}
+
+.submit-container .btn-success {
+  padding: 14px;
+}

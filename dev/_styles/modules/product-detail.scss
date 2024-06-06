@@ -1,0 +1,502 @@
+// --------------------------------------------------------
+// Product Detail
+// --------------------------------------------------------
+
+.product-detail-container {
+  padding: 75px 0 0; // value from visual diff
+
+  @include media-breakpoint-down('sm'){
+    padding: 0;
+  }
+}
+
+.product-title {
+  margin-bottom: 10px;
+  @include media-breakpoint-down('sm') {
+    text-align: center;
+  }
+}
+
+#product-reviews {
+  // margin-bottom: 25px;
+
+  #ratings-summary {
+    align-items: flex-end !important;
+    font-size: 12px !important;
+  }
+
+  @include media-breakpoint-down('sm') {
+    [data-bv-show="rating_summary"] {
+      text-align: center !important;
+    }
+  }
+
+  [data-bv-show=rating_summary] .bv_main_container .bv_numReviews_text,
+  [data-bv-show=rating_summary] .bv_main_container .bv_numReviews_text:hover,
+  [data-bv-show=rating_summary] .bv_main_container .bv_avgRating,
+  [data-bv-show=rating_summary] .bv_main_container .bv_avgRating:hover,
+  [data-bv-show=rating_summary] .bv_main_container .bv_numReviews_text ,
+  [data-bv-show=rating_summary] .bv_main_container .bv_numReviews_text :hover {
+    text-decoration: none !important;
+    color: $gr6 !important;
+    font-size: 12px !important;
+ }
+
+  [data-bv-show=rating_summary] .bv_main_container .bv_button_buttonMinimalist,
+  [data-bv-show=rating_summary] .bv_main_container .bv_button_buttonMinimalist:hover,
+  [data-bv-show=rating_summary] .bv_main_container .bv_avgRating,
+  [data-bv-show=rating_summary] .bv_main_container .bv_avgRating:hover,
+  [data-bv-show=rating_summary] .bv_main_container .bv_numReviews_text ,
+  [data-bv-show=rating_summary] .bv_main_container .bv_numReviews_text :hover {
+    color: $gr6 !important;
+    font-size: 12px !important;
+ }
+}
+
+.product-price {
+  @include media-breakpoint-down('sm') {
+    text-align: center;
+  }
+
+  & ~ div[itemprop="offers"] {
+    margin-top: 30px;
+  }
+}
+
+.selector-wrapper {
+  margin-top: 25px;
+
+  &.form-group label {
+    @extend .p1;
+  }
+
+  @include media-breakpoint-down('sm') {
+    text-align: center;
+  }
+}
+
+.product__affirm-section {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 25px;
+  height: 100px;
+
+  .price {
+    display: block;
+    @extend .h5;
+    color: $black;
+    margin: 10px 0;
+  }
+
+  .affirm-as-low-as {
+    margin-bottom: 0;
+  }
+
+  .affirm-block {
+    width: 50%;
+    padding: 0 20px;
+    @extend .p1;
+    color: $gr6;
+
+    .affirm-ala-price {
+      color: $black;
+      font-size: 18px;
+    }
+
+    @include media-breakpoint-down('sm') {
+      padding: 0 10px;
+    }
+  }
+
+  .affirm__block-descriptor {
+    @extend .p2;
+    display: block;
+    color: $gr6;
+    img {
+      margin-bottom: 5px;
+    }
+
+    a {
+      position: relative;
+      color: $white;
+      font-weight: $font-weight-bold;
+      font-size: 0.8em;
+      vertical-align: super;
+      padding: 5px;
+      text-decoration: none;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $black;
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
+  }
+
+  .affirm-block--affirm-price {
+    border-left: 1px solid $gr2;
+  }
+
+}
+
+button[data-add-to-cart],
+button[data-add-to-cart] + .klaviyo-bis-trigger {
+  margin-top: 25px;
+}
+
+.product__registry-integration {
+  margin-top: 15px;
+
+  .babylist-icon-full-color {
+    width: 75px;
+    margin-bottom: -3px;
+  }
+}
+
+.product__notice {
+  color: $red;
+  margin-top: 16px;
+}
+
+.product-description {
+  margin-top: 20px;
+}
+
+.product__description-toggler {
+  display: block;
+  margin-top: 10px;
+}
+
+
+.compatibilityMessage{
+  text-align:center;
+  font-size:16px;
+  margin-top:25px;
+}
+
+// Slideshow / Zoom
+// --------------------------------------------------------
+
+.product-galleries {
+  position: relative;
+  padding-top: 25px;
+}
+
+// Make these go flush on mobile
+.product-gallery {
+  margin-left: -($grid-gutter-width / 2);
+  margin-right: -($grid-gutter-width / 2);
+
+  @include media-breakpoint-up('md') {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.product-gallery__slideshow {
+  margin: 0 auto;
+  max-width: 500px;
+
+  @include media-breakpoint-up('sm') { max-width: none; }
+
+  html.js & {
+    opacity: 0;
+
+    &.swiper-container-initialized {
+      opacity: 1;
+      transition: opacity 300ms ease-out;
+    }
+  }
+
+  .swiper-slide {
+    display: inline-block;
+    // Because we want the gallery to be flush, add back the grid padding here - see .product-gallery above
+    padding: 0 $grid-gutter-width / 2;
+
+    @include media-breakpoint-up('md') {
+      padding: 0;
+    }
+
+    &.is-zoomable {
+      cursor: zoom-in;
+      cursor: -webkit-zoom-in;
+    }
+
+    &.is-zoomed {
+      cursor: zoom-out;
+      cursor: -webkit-zoom-out;
+      border: 1px solid #ccc;
+    }
+
+    &:focus { outline: 0; }
+
+    img {
+      width: 100%;
+      &:focus { outline: 0; }
+    }
+  }
+}
+
+.product-gallery__slideshow {
+  .swiper-pagination {
+    position: relative;
+    bottom: 0;
+    padding: 20px 0;
+
+    @include media-breakpoint-up('md') {
+      display: none;
+    }
+  }
+}
+
+.product-gallery__image-container {
+  position: relative;
+  display: block;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    width: 100%;
+  }
+
+  img {
+    position: absolute;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+}
+
+.product-gallery__thumbnails {
+  margin-top: 30px;
+  padding: 0 45px;
+
+  @include media-breakpoint-down('sm') {
+    display: none;
+  }
+
+  .swiper-arrow {
+    height: 100%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+  }
+
+  .swiper-arrow--left {
+    left: 0;
+  }
+
+  .swiper-arrow--right {
+    right: 0;
+  }
+}
+
+.product-gallery__thumbnails-slide {
+  display: inline-block;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity $transition-duration-fast $transition-timing-function-out;
+
+  &.swiper-slide-active {
+    border: 1px solid $black;
+    opacity: 1;
+    transition: opacity $transition-duration-fast $transition-timing-function-in;
+  }
+  
+  &:before {
+    content:"";
+    display: block;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+
+  img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+  }
+}
+
+.product-gallery__play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+
+  .icon-play {
+    width: 40px;
+    height: 40px;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.sticky-product-price-wrapper,
+.sticky-variant {
+  display: none;
+}
+
+.option-name-span {
+  display: inline-block;
+}
+
+
+// Product Sticky Bar
+.product-sticky-bar {
+  color: $black;
+  position: fixed;
+  z-index: 149;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 0 10px;
+  background: $white;
+  box-shadow: inset 0 8px 10px -6px transparentize($black, 0.95),
+                    0 8px 10px -6px transparentize($black, 0.95);
+
+                    .option-name-span {
+                      color: $black !important;
+                    }
+
+  .container {
+    @media screen and (max-width: 1400px) and (min-width: 1200px){
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
+
+  // If we have a fixed header, position it below the header
+  .site-fixed-header & {
+    top: $header-height-small;
+
+    @media (min-width: 992px) {
+      top: 94px;
+    }
+  }
+
+  // Make sure this doesn't show on xs -> sm screens no matter what
+  @media (max-width: 991px) {
+    display: none !important;
+  }
+
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-110%); // hide the element itself + a little extra for the box-shadow
+  @include transition(transform $transition-duration-dropdown $transition-timing-function-dropdown-out, opacity $transition-duration-dropdown step-end);
+
+  &.is-visible {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+    @include transition(transform $transition-duration-dropdown $transition-timing-function-dropdown-in, opacity $transition-duration-dropdown step-start);
+  }
+
+  // Hide all labels
+  .bv_main_container_row_flex .bv_button_component_container,
+  .product-price s[data-compare-price],
+  .selector-wrapper.quantity-wrapper,
+  .product__affirm-section,
+  .selector-wrapper .dots {
+    display: none !important;
+  }
+
+  .product-detail__form-variants,
+  .product-detail__form-row,
+  .selector-wrapper {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .selector-wrapper {
+    margin-bottom: 0;
+    margin-right: 11px;
+    margin-top: 0;
+  }
+
+  .sticky-title,
+  [data-product-price] {
+    color: $black;
+  }
+
+  label {
+    color: black;
+  }
+
+  .sticky-variant {
+    display: inline-block;
+  }
+
+  .sticky-form-right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .sticky-form-right .form-container {
+    width: 100%;
+  }
+
+  .sticky-title {
+    margin-bottom: 5px;
+  }
+
+  #product-reviews {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .sticky-product-inner-container {
+    margin-right: 20px;
+  }
+
+  .sticky-product-price-wrapper {
+    display: block;
+  }
+
+  [data-add-to-cart-form] {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+  }
+
+  [data-add-to-cart-form] .selector-wrapper.form-group.js ~ .product__affirm-section {
+    display: none !important;
+  }
+
+  button[data-add-to-cart],
+  button[data-add-to-cart] + .klaviyo-bis-trigger{
+    margin: 0;
+    width: 100%;
+    max-width: 270px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  [data-variant-name] {
+    color: $gr6;
+  }
+
+  .chosen-container {
+    display: none !important;
+  }
+}

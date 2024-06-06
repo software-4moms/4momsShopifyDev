@@ -1,0 +1,234 @@
+#tout-expanded-page-dealsPage{
+    padding: 60px 0 30px !important;
+}
+
+
+.dealsHeadingTout{
+
+    .tout-expanded__title{
+        font-size: 4em;
+        letter-spacing: 5px;
+        margin-bottom: 45px;
+        font-weight: bolder;
+    }
+    p{
+        font-size: 1.5em;
+        width: 95%;
+        max-width: 1000px;
+        line-height: 30px;
+        margin: 0 auto;
+    }
+    span p{
+        font-size: 1em;
+        line-height: 24px;
+
+    }
+}
+
+
+.deal-section{
+    height: 350px;
+        position: relative;
+    top: 150px;
+    z-index: -1px;
+    margin-top: -125px;
+
+
+
+}
+
+.dealsTitle{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    @include media-breakpoint-down('md') {
+        margin-top: 25px;
+    }
+    
+        
+    h2{
+        font-size: 3.5em;
+        font-weight: bolder;
+        @include media-breakpoint-down('md') {
+            font-size: 3em;
+            line-height: 50px;
+            padding: 0 45px;
+    
+        }
+    }
+    .couponCodeTitle{
+        font-size: 1.5em;
+        font-weight: bolder;
+        margin-top: 30px;
+    }
+}
+
+.deal-row{
+    background-color: #f2f2f2;
+    padding: 50px;
+
+    @include media-breakpoint-down('xl') {
+        padding: 25px;
+
+    }
+    @include media-breakpoint-down('lg') {
+        padding: 10px;
+
+    }
+    @include media-breakpoint-down('md') {
+        padding:20px 0;
+        margin: 0;
+
+    }
+}
+
+
+.deals-image img{
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+    height: auto;
+    @include media-breakpoint-down('lg') {
+        padding: 5px 0;
+
+    }
+    @include media-breakpoint-down('md') {
+        padding: 0;
+
+    }
+}
+
+
+.deals-details{
+    text-align: center;
+
+
+    h3{
+        font-size: 1.8em;
+        margin-top: 15px;
+        // font-weight: bolder;
+        @include media-breakpoint-down('lg') {
+            font-size: 1.5em;
+            margin: 15px 0 0 0;
+        }
+
+        @include media-breakpoint-down('sm'){
+            font-size: 1.1em;
+        } 
+    }
+    h4{
+        font-size: 1.35em;
+        margin: 5px 0 0 0 ;
+        line-height: 35px;
+        @include media-breakpoint-down('lg') {
+            margin: 10px 0;
+            font-size: 1.25em;
+        }
+        @include media-breakpoint-down('sm'){
+            font-size: 1em;
+            line-height: 22px;
+        } 
+    }
+    .btn{
+        margin: 25px 0 25px 0;
+        @include media-breakpoint-down('sm'){
+            padding: 10px 25px;
+            min-height: 45px;
+        } 
+    }
+
+
+}
+
+.content-container-dealTwo{
+    margin-top: 50px;
+    @include media-breakpoint-down('xl'){
+        margin-top: 25px;
+    }
+    @include media-breakpoint-down('md'){
+        margin-top: 5px;
+    }
+    @media (min-width: 1600px){
+        margin-top: 75px;
+    }
+
+}
+
+
+
+.deals-hr{
+    border: solid 2px #000;
+    width: 75%;
+    display: block;
+    clear: both;
+    // height: 2px;
+}
+
+.dealsDeatailsCopy{
+display: block;
+width: 90%;
+max-width: 400px;
+margin: 0 auto;
+ p{
+    text-align: center;
+}
+}
+.useCode p{
+    text-align: center;
+    font-weight: bolder;
+}
+.dealsEndDate p{
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+.deal-small-copy{
+    width: 70%;
+    max-width: 700px;
+    margin: 20px auto 75px;
+    text-align: center;
+    p{
+        font-size: 12px;
+    }
+    @include media-breakpoint-down('md'){
+    width: 100%;
+    }
+}
+
+
+
+.dealsTout{
+    height: 600px;
+    .tout-logo-container{
+    img{
+        width: 200px;
+    }
+}
+}
+
+.klaviyo-form-V2R63Z{
+    width: 90%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;}
+
+
+
+    button.needsclick.Button__FormStyledButton-p2mbjt-0.kEbvPC.kl-private-reset-css-Xuajs1{
+        font-size: 18px !important;
+    line-height: 22px !important;
+    letter-spacing: .05em !important;
+    font-weight: 700 !important;
+    background-color: #000 !important;
+    color: #fff !important;
+    padding: 14px 50px!important;
+    border-radius: 10px!important;
+    text-decoration: none!important;
+    width: 120px !important;
+    margin: 0 auto;
+}
+
+
+

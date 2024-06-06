@@ -1,0 +1,126 @@
+// -------------------------
+// Layout
+// -------------------------
+
+.desktop_logo {
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+.wrap {
+  max-width: 100%;
+
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.main {
+  @media (min-width: $checkout-bp-md-min) {
+    width: 60%;
+    max-width: 60%;
+  }
+
+  .section__title {
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: 0.05em;
+    width: 100%;
+  }
+}
+
+// make both containers have a white background
+.main,
+.sidebar {
+  &:after {
+    background-color: $white;
+  }
+}
+
+.main__header {
+
+  .logo {
+
+    .logo__image,
+    .logo__image--large,
+    .logo__image--small {
+
+    }
+
+    .logo__image {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+// Review Block
+// ---------------------------------
+
+.step__sections {
+  .content-box {
+    border: 0px solid;
+    border-radius: 5px;
+    .content-box__row.content-box__row--tight-spacing-vertical{
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 30px;
+    }
+  }
+}
+
+.review-block ~ .review-block {
+  border-top: none;
+}
+
+.review-block {
+  .review-block__inner {
+    flex-direction: column;
+  }
+
+  .review-block__label {
+    font-weight: bold;
+    color: $black;
+    max-height: 30px;
+  }
+
+  .review-block__link {
+    text-decoration: underline;
+    a {
+      &:before {
+        content: "Edit";
+      }
+      span:first-child {
+        display: none;
+      }
+    }
+  }
+
+  .review-block__content {
+    address {
+      margin: 0;
+    }
+  }
+}
+
+// Discounts form
+// -------------------------------------
+
+.edit_checkout,
+.order-summary__section--discount {
+  .field__input-btn {
+    position: absolute;
+    right: 0;
+    margin-top: 35px;
+    background: transparent !important;
+    color: black;
+
+    &:after {
+      content: url("data:image/svg+xml;charset=UTF-8,<svg class='icon-chevron' width='13' height='21' viewBox='0 0 13 21' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M1 19.8293L11.1786 10.4136L1 1' stroke='black' stroke-width='2' stroke-miterlimit='10' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+      position: relative;
+      left: 30px;
+      top: 5px;
+    }
+  }
+}

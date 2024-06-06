@@ -1,0 +1,236 @@
+// -------------------------
+// Sidebar
+// -------------------------
+
+.sidebar {
+  @media (min-width: $checkout-bp-md-min) {
+    width: 40%;
+    max-width: 40%;
+  }
+
+  .btn__content {
+    position: relative !important;
+  }
+
+  .icon-svg.icon-svg--size-16.btn__icon.shown-on-mobile {
+    display: none;
+  }
+
+  .order-summary__small-text {
+
+  }
+
+  .payment-due-label__total {
+
+  }
+
+  .payment-due__currency {
+
+  }
+
+  .payment-due__price {
+
+  }
+
+  &:after {
+    box-shadow: none;
+    position: relative;
+  }
+}
+
+.sidebar__content {
+  @media (max-width: $checkout-bp-md-min) {
+    padding: 20px;
+  }
+
+}
+
+.order-summary-toggle {
+  border: none;
+}
+
+.order-summary-toggle__icon,
+.order-summary-toggle__dropdown {
+  fill: #f00;
+}
+
+.order-summary-toggle__text {
+  color: $black;
+}
+
+.order-summary-toggle__icon-wrapper {
+  display: none !important;
+}
+
+.order-summary-toggle__text--show {
+  &:after {
+    content: "+";
+    font-size: 15px;
+  }
+  svg {
+    display: none;
+  }
+}
+
+.order-summary-toggle__text--hide {
+  &:after {
+    content: "-";
+    font-size: 15px;
+  }
+  svg {
+    display: none;
+  }
+}
+
+.order-summary {
+
+  &.order-summary--is-expanded {
+
+  }
+}
+
+.order-summary__sections {
+
+}
+
+.order-summary__section {
+
+}
+
+.order-summary__section--product-list .product-table {
+
+}
+
+.order-summary__section--discount {
+  .anyflexbox & .field__input-btn {
+
+  }
+
+  .field__label.field__label--visible {
+
+  }
+}
+
+// Order summary
+// ---------------------------------------------------------
+
+.product {
+  margin-left: 175px;
+}
+
+.order-summary-toggle:hover .order-summary-toggle__text,
+.order-summary-toggle:focus .order-summary-toggle__text {
+  color: $black;
+}
+
+.product-thumbnail {
+  width: 175px;
+  height: 175px;
+
+  @media (max-width: 765px) {
+    width: 50vw;
+    height: 50vw;
+  }
+
+  // Hide the thumbnail frame
+  &:after {
+    display: none;
+  }
+}
+
+td.product__image {
+  width: 175px;
+}
+
+.product-thumbnail__quantity {
+  display: none;
+}
+
+th.product__description {
+  @extend .h5;
+  display: block;
+  margin: 40px 0 20px;
+}
+
+.product__description__name {
+  @extend .h5;
+  font-weight: bold;
+
+  &, &.order-summary__emphasis {
+
+  }
+}
+
+td.product__quantity {
+  @extend .p1;
+  display: block;
+  height: auto;
+  width: auto;
+  clip: inherit;
+  padding-left: 16px;
+  position: relative !important;
+
+  &:before {
+    content: "Qty: ";
+  }
+
+  .visually-hidden{
+    position: relative !important;
+
+  }
+}
+
+td.product__price {
+  @extend .p1;
+  display: block;
+  text-align: left;
+}
+
+// Order Totals
+// -------------------------------------
+
+.order-summary__section {
+  @extend .p1;
+  padding-bottom: 0;
+}
+
+.order-summary__section--product-list{
+  &:after {
+    background-color: transparent !important;
+  }
+}
+
+.order-summary__section ~ .order-summary__section {
+  border-top: 0 solid transparent !important;
+}
+
+tr.total-line > .total-line__name {
+  @media (min-width: $checkout-bp-md-min) {
+    padding-left: 80px;
+  }
+}
+
+td.total-line__price.payment-due {
+  .payment-due__price {
+    @extend .p1;
+  }
+  .payment-due__currency {
+    display: none;
+  }
+}
+
+// Thank you page sidebar styles
+// -----------------------------------------
+
+.page--thank-you {
+
+  .sidebar {
+    background-color: $gr1;
+
+    @media (min-width: $checkout-bp-md-min) {
+      right: 0;
+      position: absolute;
+      padding-right: 60px;
+    }
+  }
+}

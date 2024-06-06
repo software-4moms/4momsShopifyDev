@@ -1,0 +1,46 @@
+.tout-expanded {
+  .tout-logo-container img{
+    width: 150px;
+    display: block;
+    margin: 0 auto 15px;
+    }
+    .tout-expanded__title {
+      color: $black;
+      text-align: center;
+  
+      @include media-breakpoint-down('sm') {
+        font-size: 28px;
+        padding: 0 20px;
+      }
+    }
+  
+    .tout-expanded__body {
+    text-align: center;
+    margin:40px 0;
+      color: $gr6;
+  
+      @include media-breakpoint-down('sm') {
+        padding: 0 20px;
+      }
+    }
+  }
+
+
+
+.tout-expanded__smallcopy{
+    width: 70%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+    p em{
+        font-size: 10px !important;
+    }
+    p {
+      font-size: 10px !important;
+  }
+}
+
+.hide_cares_nicu{
+  display: none;
+}

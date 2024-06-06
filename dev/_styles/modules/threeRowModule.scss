@@ -1,0 +1,38 @@
+// --------------------------------------------------------
+// Product Movement Section
+// --------------------------------------------------------
+
+.threeRowModule-container{
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+h3.threeRowHeading{
+    margin-top: 70px !important;
+    // font-size: 30px;
+
+}
+.threeRowModule-Row img{
+    display: block;
+    width: 90%;
+    max-width: 250px;
+    margin: 0 auto;
+    clear: both;
+}
+.threeRowModule-Row h5{
+    text-align: center;
+    margin-top: 15px;
+    //margin-bottom: 5px;
+}
+
+.threeRowModule-Row  p{
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: .05em;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    max-width: 312px;
+    margin-bottom: 35px;
+
+}

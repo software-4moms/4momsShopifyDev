@@ -1,0 +1,182 @@
+// -------------------------
+// Account Pages
+// -------------------------
+
+// Not scoped to a specific account page
+
+.layout-content-wrapper {
+  &.account-content-wrapper {
+
+    margin-top: 85px;
+    margin-bottom: 100px;
+    color: $black;
+    @include media-breakpoint-down('md') {
+      margin-top: 25px;
+    }
+    @include media-breakpoint-down('xs') {
+      margin: 25px 10px 100px 10px;
+    }
+
+    .account-button {
+      @include media-breakpoint-down('sm') {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+.template-addresses .layout-content-wrapper,
+.template-account .layout-content-wrapper {
+  margin-bottom: 70px;
+}
+
+.account-block {
+  margin-bottom: 25px;
+
+  address {
+    margin-bottom: $spacer;
+    font-weight: $font-weight-normal;
+  }
+}
+
+.account-block__address-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.account-block__address-link-mobile {
+  display: none;
+  @include media-breakpoint-down('md') {
+    display: block;
+  }
+}
+
+.account-block__address-link-desktop {
+
+  @include media-breakpoint-down('md') {
+    display: none;
+  }
+}
+
+
+
+.account-block__title {
+  margin-bottom: 35px;
+}
+
+.account-sidebar__content {
+  color: $black;
+}
+
+.account-sidebar__menu a,
+.account-sidebar__menu a:hover {
+  color: $black;
+  text-decoration: none;
+}
+
+.account-content__email {
+  margin-top: 60px;
+}
+
+table.order-detail-totals {
+  @include media-breakpoint-up('lg') {
+    max-width: 365px;
+    margin-left: auto;
+  }
+}
+
+.account-content {
+
+}
+
+.account-sidebar {
+  @extend .col-sm-12;
+  @extend .col-md-12;
+  @extend .col-lg-3;
+  @extend .col-xxl-2;
+  @extend .offset-xxl-1;
+
+  @include media-breakpoint-down('md') {
+    margin-bottom: 15px;
+  }
+}
+
+.account-content--has-sidebar {
+  @extend .col-sm-12;
+  @extend .col-md-12;
+  @extend .col-lg-9;
+  @extend .col-xxl-8;
+}
+
+.account-sidebar__content {
+
+  @include media-breakpoint-up('lg') {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @include media-breakpoint-up('xl') {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.extra-addresses {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.account-content__order-content {
+  strong {
+    font-weight: $font-weight-bold;
+  }
+
+  td {
+    font-weight: $font-weight-normal;
+  }
+}
+
+.account-sidebar__title, .account-content__title {
+
+  @include media-breakpoint-up('lg') {
+    margin-bottom: 90px;
+  }
+}
+
+.account-sidebar__menu {
+  @include list-unstyled;
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &.is-active {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+.customers-login__register-form {
+  @include media-breakpoint-down('md') {
+    display: none;
+  }
+}
+
+
+.template-register {
+  .customer-login__login-form {
+    @include media-breakpoint-down('md') {
+      display: none;
+    }
+  }
+
+  .customers-login__register-form {
+    @include media-breakpoint-down('md') {
+      padding: 0 20px;
+      margin-bottom: 40px;
+      display: block
+    }
+  }
+}

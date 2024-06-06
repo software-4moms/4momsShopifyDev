@@ -1,0 +1,72 @@
+.quick-links {
+  overflow: hidden;
+  width: 100%;
+  padding: 100px 0;
+}
+.quick-link {
+  background-color: $gr2;
+  padding: 60px 15px;
+  margin: 25px 10px;
+  border-radius: 15px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-transition: all .1s ease-in-out;
+-moz-transition: all .1s ease-in-out;
+-ms-transition: all .1s ease-in-out;
+-o-transition: all .1s ease-in-out;
+transition: all .1s ease-in-out;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    border: solid black 3px;
+
+  }
+}
+.quick-link-section-title{
+  text-align: center;
+}
+.quick-link-link{
+  text-decoration: none;
+  &:hover,
+  &:focus,
+  &:active{
+    text-decoration: underline;
+  }
+}
+.quick-link__image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  object-position: center center;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quick-link__title {
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: .05em;
+}
+
+.quick-link__description {
+  margin-bottom: 0;
+}
+
+.quick-link__more-info-bottom {
+  line-height: 1;
+  @include media-breakpoint-only(md) {
+    margin-bottom: 20px;
+  }
+}

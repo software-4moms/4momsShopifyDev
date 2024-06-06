@@ -1,0 +1,42 @@
+.account-content__orders-title {
+    @include media-breakpoint-up('lg') {
+        margin-bottom: 90px;
+  }
+}
+
+.account-content__table-labels {
+    border-bottom: 1px solid $gr2;
+}
+
+.account-content__orders-table, 
+.account-content__order-fulfillment-link, 
+.account-content__mobile-table {
+    color: $black;
+}
+
+.account-content__orders-table th{
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.account-content__orders-table td {
+    padding: 35px 0 0 0;
+}
+
+.account-content__order-details-link {
+    margin-bottom: 5px;
+}
+
+.account-content__mobile-table th {
+    font-weight: normal;
+    padding-left: 0;
+}
+
+.account-content__mobile-table .account-content__mobile-order-number {
+    font-weight: bold;
+}
+
+.details {
+    text-align: right;
+}

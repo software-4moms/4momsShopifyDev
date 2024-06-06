@@ -1,0 +1,32 @@
+.team-grid {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 50px;
+  @include media-breakpoint-up(md) {
+    margin-top: 50px;
+    margin-bottom: 70px;
+  }
+}
+
+.team-grid__row {
+  margin-bottom: 40px;
+  @include media-breakpoint-up(md) {
+    margin-bottom: 55px;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.team-grid__content {
+  color: $gr6;
+  a {
+    color: $black;
+  }
+}
+
+.team-grid__card-description {
+  color: $gr6;
+}

@@ -1,0 +1,299 @@
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Custom typography, font setup, and Bootstrap Modified overrides.
+ * TODO: Update with latest methodology and examples.
+ */
+
+/* Type helpers
+ * ================================================================== */
+
+%typography-optimize-readability {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+#{$all-type-elements} {
+  @extend %typography-optimize-readability;
+}
+
+// Automatically reverse text by adding `.reverse` to a parent
+%reverse,
+.reverse {
+  #{$all-type-elements},
+  .rte { // target any HTML entities within RTE
+    &:not(.btn) {
+      color: $white;
+    }
+  }
+}
+
+/* Font family assignments
+ * ================================================================== */
+
+/**
+ * Assign font families below for extension in content-based type classes.
+ * The means to do this may vary slightly, depending on how fonts are
+ * included and served.
+
+ Examples:
+
+  %font-playfair-all {
+    font-family: $playfair; // TODO: No longer used, but kept for legacy reasons. Remove usage throughout project.
+  }
+
+  .font-playfair-regular,
+  %font-playfair-regular {
+    font-family: $playfair-regular;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .font-playfair-bold,
+  %font-playfair-bold {
+    font-family: $playfair-bold;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  %txt-page-header,
+  .txt-page-header {
+    @extend %font-playfair-regular;
+    font-size: fontsize(32);
+    letter-spacing: letterspacing(1);
+    line-height: lineheight(normal, 12);
+
+    @include media-breakpoint-up("md") {
+      font-size: fontsize(45);
+      letter-spacing: letterspacing(0);
+    }
+  }
+
+ */
+
+/* Headings
+ * ================================================================== */
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $headings-color;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-weight: $font-weight-normal;
+}
+
+h1,
+%h1,
+.h1 {
+  font-size: 44px;
+  line-height: 62px;
+  letter-spacing: 0;
+
+  @include media-breakpoint-down(md) {
+    font-size: 30px;
+    line-height: 42px;
+  }
+}
+
+h2,
+%h2,
+.h2 {
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: 0.05em;
+
+  @include media-breakpoint-down(md) {
+    font-size: 25px;
+    line-height: 31px;
+  }
+}
+
+h3,
+%h3,
+.h3 {
+  font-size: 25px;
+  line-height: 37px;
+  letter-spacing: 0.05em;
+
+  @include media-breakpoint-down(md) {
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+
+h4,
+%h4,
+.h4 {
+  font-size: 22px;
+  line-height: 27px;
+  letter-spacing: 0.05em;
+}
+
+h5,
+%h5,
+.h5 {
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.05em;
+}
+
+h6,
+%h6,
+.h6 {
+  @include h6;
+}
+
+.lead {
+  @include font-size($lead-font-size);
+  font-weight: $lead-font-weight;
+}
+
+// Type display classes
+.display-1 {
+  @include font-size($display1-size);
+  font-weight: $display1-weight;
+  line-height: $display-line-height;
+}
+.display-2 {
+  @include font-size($display2-size);
+  font-weight: $display2-weight;
+  line-height: $display-line-height;
+}
+.display-3 {
+  @include font-size($display3-size);
+  font-weight: $display3-weight;
+  line-height: $display-line-height;
+}
+.display-4 {
+  @include font-size($display4-size);
+  font-weight: $display4-weight;
+  line-height: $display-line-height;
+}
+
+/* Paragraphs
+ * ================================================================== */
+
+p, .p1, .p2, .p3 {
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-family: $font-family-base;
+  font-weight: $font-weight-normal;
+}
+
+p,
+%p1,
+.p1 {
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+}
+
+%p2,
+.p2 {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.05em;
+}
+
+%p3,
+.p3 { @include p3; }
+
+.body { @include body }
+
+/* Horiz rules
+ * ================================================================== */
+
+hr {
+  margin-top: $hr-margin-y;
+  margin-bottom: $hr-margin-y;
+  border: 0;
+  border-top: $hr-border-width solid $hr-border-color;
+}
+
+/* Emphasis
+ * ================================================================== */
+
+small,
+.small {
+  @include font-size($small-font-size);
+  font-weight: $font-weight-normal;
+}
+
+mark,
+.mark {
+  padding: $mark-padding;
+  background-color: $mark-bg;
+}
+
+strong,
+b {
+  font-weight: $font-weight-bold;
+}
+
+/* Lists
+ * ================================================================== */
+
+.list-unstyled {
+  @include list-unstyled;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  @include list-unstyled;
+}
+.list-inline-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $list-inline-padding;
+  }
+}
+
+/* Misc
+ * ================================================================== */
+
+// Builds on `abbr`
+.initialism {
+  @include font-size(90%);
+  text-transform: uppercase;
+}
+
+// Blockquotes
+.blockquote {
+  margin-bottom: $spacer;
+  @include font-size($blockquote-font-size);
+}
+
+.blockquote-footer {
+  display: block;
+  @include font-size($blockquote-small-font-size);
+  color: $blockquote-small-color;
+
+  &::before {
+    content: "\2014\00A0"; // em dash, nbsp
+  }
+}
+
+.bold {
+  font-weight: $font-weight-bold;
+}
+
+a{
+  font-family: $font-family-base;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  color: $black;
+  text-decoration: underline;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  @include transition($btn-transition);
+
+  &:hover {
+    color: $purple;
+    // font-weight: bold;
+    text-decoration: underline;
+  }
+}

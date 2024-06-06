@@ -1,0 +1,237 @@
+.limespot-outterbox{
+  height: 650px;
+  width: 100%;
+  // max-width: 1240px;
+  margin: 0 auto;
+  @include media-breakpoint-down('md') {
+    width: 90%;
+  max-width: 600px;
+
+    height: 875px;
+  }
+  @include media-breakpoint-down('sm') {
+    height: 825px;
+  }
+  @include media-breakpoint-down('xs') {
+    width: 100%;
+    height: 800px;
+  }
+}
+.limespot-outterbox-slim{
+  height: 400px;
+  @include media-breakpoint-down('md') {
+    height: 500px;
+  }
+  @include media-breakpoint-down('sm') {
+    height: 625px;
+  }
+}
+
+.limespot-recommendation-box-grid li:nth-child(5){
+  display: none !important;
+}
+.limespot-recommendation-box-carousel-container{
+  width: 89%;
+  margin: 0 auto;
+
+}
+.ls-recommendation-box.limespot-recommendation-box {
+  @extend .container;
+
+  .ls-box-title {
+    margin-bottom: 35px;
+  }
+
+  .limespot-recommendation-box-carousel-indicator {
+    opacity: 1;
+    // transform: none !important;
+    pointer-events: auto;
+
+    .recomm-arrow {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      padding: 0 !important;
+      margin: 0 !important;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        background-color: $black;
+        border-radius: 50%;
+        background-image: url('chevron--white.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 20px;
+      }
+    }
+
+    .recomm-arrow.arrow-right:before{
+      left: 0;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    .recomm-arrow.arrow-left:before{
+      right: 0;
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    // .recomm-arrow .arrow-left
+  }
+
+  .ls-ul-container.limespot-recommendation-box-carousel {
+    padding-bottom: 30px;
+    width: 89%;
+    margin: 0 auto !important;
+  }
+
+  .limespot-recommendation-box-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    position: relative;
+    justify-content: flex-start;
+  }
+
+
+  .limespot-recommendation-box-item {
+    padding: 70px 0 30px;
+    margin: 0 ($grid-gutter-width / 2);
+    background-color: $gr2;
+    flex-basis: unset !important;
+    flex: 1 1 20% !important;
+    margin-bottom: 10px;
+    height: 500px;
+    max-width: calc(25% - 20px) !important;
+
+    &:hover {
+      transform: scale(1);
+    }
+
+    @include media-breakpoint-down('md') {
+      height: auto;
+      flex: 1 1 46% !important;
+      background-color: $white;
+      padding: 0;
+      margin: 0 ($grid-gutter-width / 2) !important;
+      margin-bottom: 30px;
+      max-width: calc(50% - 20px) !important;
+    }
+
+    .ls-link {
+      justify-content: flex-start;
+    }
+
+    .ls-image-wrap {
+      width: 100%;
+      height: 100%;
+      max-width: 230px;
+      margin: auto;
+      background-color: $gr2;
+      flex: 1 1 100% !important;
+
+      @include media-breakpoint-down('md') {
+        max-width: unset;
+        height: 0;
+        margin: 0;
+        padding-bottom: 100%;
+      }
+    }
+
+    .ls-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+    }
+
+    .ls-info-wrap {
+      padding: 0 20px !important;
+      margin: 15px 0;
+
+      @include media-breakpoint-down('md') {
+        padding: 0 !important;
+      }
+    }
+
+    .ls-title {
+      margin-bottom: 15px;
+    }
+
+    .ls-title,
+    .ls-price-wrap {
+      @extend .h5;
+      color: $black;
+      text-align: left;
+    }
+
+    .ls-li-quick-actions {
+      margin-top: 0;
+      height: auto;
+
+      @include media-breakpoint-down('md') {
+        height: 0 !important;
+      }
+    }
+
+    @at-root .ls-add-to-cart-wrap {
+      display: block !important;
+      height: 0;
+      overflow: hidden;
+      transition: height $transition-duration-base $transition-timing-function-slide-out;
+
+      .ajax-cart__footer & {
+        height: auto;
+      }
+
+      .limespot-recommendation-box-item:hover & {
+        height: 50px;
+        transition: height $transition-duration-base $transition-timing-function-slide-in;
+      }
+    }
+
+    .ls-add-to-cart {
+      border: solid 2px $black;
+      font-weight: $font-weight-bold;
+      color: $white;
+      transition: all 150ms ease-in-out;
+      height: 50px;
+      padding: 6px 12px;
+
+      &.ls-dropdown {
+        text-align-last:center;
+      }
+
+      &:hover {
+        border-color: $blue;
+      }
+
+      @include media-breakpoint-down('md') {
+        display: none;
+      }
+    }
+
+    .ls-add-to-cart-arrow {
+      display: none;
+    }
+  }
+}
+
+.cart [data-box-type="Upsell"] {
+  display: none !important;
+}
+
+limespot-box[data-box-type="Upsell"]{
+  display: none !important;
+}
+
+.ajax-cart__footer-row--limespot limespot-box[data-box-type="Upsell"]{
+  display: block !important;
+}

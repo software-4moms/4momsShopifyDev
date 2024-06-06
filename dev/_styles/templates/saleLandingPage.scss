@@ -1,0 +1,47 @@
+.sale-banner{
+    display: flex;
+    flex-direction: row;
+}
+
+.sale-banner-panel{
+    flex: 1 1 100%;
+}
+
+#second-sale-banner{
+    flex-basis: 50%;
+    //min-width: 480px;
+}
+
+
+@media (max-width: 991px) {
+    .sale-banner{
+        display: flex;
+        flex-direction: column;
+    }
+    #second-sale-banner{
+      order: 2;
+      height: 400px;
+      flex-basis: auto;
+      min-width: 200px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    #second-sale-banner{
+      height: 400px;
+      flex-basis: auto;
+    }
+    #second-sale-banner #banner__panel-sale-banner-2{
+      height: 400px;
+    } 
+    }
+
+    @media (max-width: 600px) {
+        #second-sale-banner{
+      height: 375px;
+      flex-basis: auto;
+    }
+    #second-sale-banner #banner__panel-sale-banner-2{
+      height: 375px;
+    } 
+    }

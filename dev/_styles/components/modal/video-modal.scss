@@ -1,0 +1,71 @@
+.modal--video {
+  &.modal-lg {
+    max-width: none;
+
+    .modal-dialog {
+      max-width: 800px;
+    }
+  }
+
+  .modal-header {
+    border-bottom: 0;
+    padding: 0;
+
+    .icon-close {
+      width: 28px;
+      height: 28px;
+
+      path {
+        stroke: $white;
+      }
+    }
+  }
+
+  .modal-content {
+    background-color: transparent;
+    border: none;
+
+    @include media-breakpoint-down('md') {
+      padding: 15px;
+    }
+  }
+
+  .modal-body {
+    padding: 15px 40px;
+
+    @include media-breakpoint-down('md') {
+      padding: 15px 0;
+    }
+  }
+}
+
+.video-player__embed {
+  padding-bottom: percentage(9/16);
+  position: relative;
+
+  iframe {
+    @include stretch-within;
+    width: 100%;
+    height: 100%;
+  }  
+}
+
+.tscripts-btn{
+  margin: 10px auto;
+  display: block;
+}
+.transcriptbox{
+  background-color: #000;
+  color: #fff;
+  width: 90%;
+  padding: 15px 20px;
+  margin: 10px auto;
+  display: none;
+  height: auto;
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+.transcriptbox__show{
+  display: block;
+}

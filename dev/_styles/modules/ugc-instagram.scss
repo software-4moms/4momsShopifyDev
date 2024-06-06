@@ -1,0 +1,109 @@
+.ugc-instagram {
+
+  .ugc-title{
+    text-align: center;
+  }
+
+
+  .fs-slider-container{
+    overflow: visible;
+
+    .fs-slider-prev-button,
+    .fs-slider-next-button {
+      display: flex !important;
+      background: $black;
+      height: 50px;
+      width: 50px;
+      min-width: initial;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -ms-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+
+      svg{
+        display: none;
+      }
+
+      &:before{
+        content: "";
+        position: absolute;
+        top: 30%;
+        width: 20px;
+        height: 20px;
+        background-image: url('chevron--white.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &:hover {
+        background-color: $black;
+        outline-offset: 1px;
+        -webkit-box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+        box-shadow: 0 5px 10px 5px rgba(1,1,1,.25); 
+      }
+    }
+
+
+    .fs-slider-prev-button{
+      &:hover {
+        left: -5px;
+      }
+    }
+    .fs-slider-next-button{
+      &:hover {
+        right: -5px;
+      }
+
+    }
+    @include media-breakpoint-up('lg') {
+      .fs-slider-prev-button {
+        left: -55px;
+        &:hover {
+          left: -45px;
+        }
+      }
+
+      .fs-slider-next-button {
+        right: -55px;
+        &:hover {
+          right: -45px;
+        }
+      }
+    }
+
+    .fs-slider-prev-button:before {
+      transform: rotate(90deg);
+    }
+
+    .fs-slider-next-button:before {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &--homepage .fs-desktop {
+    padding: 0 60px;
+    @include media-breakpoint-down('md') {
+      padding: 0;
+    }
+
+    .fs-slider-prev-button {
+      left: 0;
+      &:hover {
+        left: -5px;
+      }
+    }
+
+    .fs-slider-next-button {
+      right: 0;
+      &:hover {
+        right: -5px;
+      }
+    }
+  }
+}

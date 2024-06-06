@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Type mixins
+   ========================================================================== */
+
+/**
+ * This file is legacy, it's mixins for styling native elements (<h1>..<h6>, <p>, etc)
+ * have been imported into `core/type.scss`.
+ *
+ * See `_styles.README.md` for details, and add new Content-Based Type Classes
+ * into `core/type.scss` instead.
+ *
+ * Conventions:
+ *
+ * *font-size* (rem) = font size (px) / css base font size
+ * *line-height* (unit-less) = leading (px) / font size (px)
+ * *letter-spacing* (em, so it scales with the font) = font size (px) / css base font size
+ *
+ * Helper functions:
+ *
+ * fontsize() -> For font-size
+ * letterspacing() - for letter-spacing
+ *
+* Make sure to include responsive styling here as well.
+ */
+
+//  More robust, but currently unused
+// @mixin maketype($fontSizeInPx, $letterSpacingInPx, $lineHeightInPx) {
+//   font-size: fontsize($fontSizeInPx);
+//   letter-spacing: letterspacing($letterSpacingInPx);
+//   line-height: lineheight($lineHeightInPx, $fontSizeInPx);
+// }
+
+@mixin h1 {
+  // @extend %font-playfair-regular;
+  font-size: fontsize(32);
+  letter-spacing: letterspacing(0);
+  line-height: lineheight(40, 32);
+  padding-bottom: 30px;
+
+  @include media-breakpoint-up('sm') {
+    font-size: fontsize(40);
+    letter-spacing: letterspacing(0);
+    line-height: lineheight(42, 40);
+  }
+
+  @include media-breakpoint-up('md') {
+    font-size: fontsize(50);
+    letter-spacing: letterspacing(0);
+    line-height: lineheight(70, 68);
+  }
+
+  @include media-breakpoint-up('xl') {
+    font-size: fontsize(68);
+    letter-spacing: letterspacing(0);
+    line-height: lineheight(70, 68);
+  }
+}
+
+@mixin h2 {
+  // @extend %font-playfair-regular;
+  font-size: fontsize(24);
+  letter-spacing: letterspacing(0);
+  line-height: 1.2; // Update to style guide
+  padding-bottom: 20px;
+
+  @include media-breakpoint-up('sm') {
+    font-size: fontsize(45);
+    letter-spacing: letterspacing(0);
+    line-height: 1.2; // Update to style guide
+  }
+}
+
+@mixin h3 {
+  // @extend %font-playfair-regular;
+  font-size: fontsize(18);
+  letter-spacing: letterspacing(0);
+  line-height: lineheight(24, 18);
+  padding-bottom: 10px;
+
+  @include media-breakpoint-up('sm') {
+    font-size: fontsize(32);
+    letter-spacing: letterspacing(0);
+    line-height: lineheight(40, 32);
+  }
+}
+
+@mixin h4 {
+  // @extend %font-playfair-regular;
+  font-size: fontsize(16);
+  letter-spacing: letterspacing(0);
+  line-height: lineheight(24, 16);
+  padding-bottom: 8px;
+
+  @include media-breakpoint-up('sm') {
+    font-size: fontsize(24);
+    letter-spacing: letterspacing(0);
+    line-height: lineheight(33, 24); // Update to style guide
+  }
+}
+
+@mixin h5 {
+  // @extend %font-gotham-regular;
+  font-size: fontsize(16);
+  letter-spacing: letterspacing(1);
+  line-height: lineheight(20, 16);
+
+  @include media-breakpoint-up('sm') {
+    font-size: fontsize(16);
+    letter-spacing: letterspacing(1);
+    line-height: lineheight(20, 16);
+  }
+}
+
+@mixin h6 {
+  font-size: fontsize(14);
+  letter-spacing: letterspacing(2);
+  line-height: lineheight(18, 14);
+}
+
+@mixin p1 {
+  // @extend %font-gotham-regular;
+  font-size: fontsize(14);
+  letter-spacing: letterspacing(.5);
+  line-height: lineheight(24, 14);
+}
+
+@mixin p2 {
+  // @extend %font-gotham-regular;
+  font-size: fontsize(12);
+  letter-spacing: letterspacing(.5);
+  line-height: lineheight(24, 12);
+}
+
+@mixin p3 {
+  // @extend %font-gotham-regular;
+  font-size: fontsize(18);
+  letter-spacing: letterspacing(.5);
+  line-height: lineheight(35, 18);
+
+  @include media-breakpoint-up('sm') {
+    font-size: fontsize(24);
+    letter-spacing: letterspacing(.5);
+    line-height: lineheight(35, 24);
+  }
+}
+
+@mixin body {
+  @include p1;
+  font-weight: $font-weight-base;
+}
+
+// RTE styling for long form content
+@mixin article-content {
+  margin-bottom: $grid-gutter-width;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: $spacer*2.5 0 $spacer*2;
+  }
+
+  p + p {
+    margin-top: $spacer*2;
+  }
+
+  p {
+    > img:only-child {
+      margin: $spacer*2 0;
+    }
+  }
+}

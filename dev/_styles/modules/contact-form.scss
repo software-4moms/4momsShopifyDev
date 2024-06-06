@@ -1,0 +1,54 @@
+.contact-form{
+  padding: 75px 0;
+  // margin-top: 50px;
+  overflow: hidden;
+
+  @include media-breakpoint-down('sm') {
+    padding: 30px 10px;
+    margin-top: 30px;
+  }
+
+  .form__container-title {
+    margin-bottom: 30px;
+
+    @include media-breakpoint-down('sm') {
+      margin-bottom: 30px;
+    }
+  }
+
+  .icon-paper-clip {
+    fill: none;
+    stroke: currentColor;
+  }
+
+  .form__attachment_notes {
+    display: block;
+  }
+
+  .contact-form__message-container {
+    margin-top: 30px;
+  }
+
+  .loader {
+    display: none;
+  }
+
+  .loading + .loader {
+    display: inline;
+  }
+
+  @keyframes loaderAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .icon-loader {
+    animation: loaderAnimation linear 1s;
+    animation-iteration-count: infinite;
+  }
+}
+

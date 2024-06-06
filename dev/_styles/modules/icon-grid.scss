@@ -1,0 +1,148 @@
+.icon-grid {
+  padding: 90px 0 80px;
+
+  @include media-breakpoint-down('md') {
+    padding: 80px 0 70px;
+  }
+
+  .container {
+    @include media-breakpoint-down('md') {
+      padding: 0;
+      max-width: 100%;
+      overflow: hidden;
+    }
+  }
+
+  .icon-wrapper {
+    position: relative;
+    max-width: 125px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include media-breakpoint-down('md') {
+      max-width: 100px;
+    }
+
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: percentage(150/150) ;
+    }
+
+    img.icon {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  .icon-card {
+    text-align: center;
+
+    @include media-breakpoint-down('md') {
+      padding: 0 20px;
+    }
+
+    &.swiper-slide-duplicate-prev,
+    &.swiper-slide-duplicate-next,
+    &.swiper-slide-next,
+    &.swiper-slide-prev {
+      @include media-breakpoint-down('md') {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .icons-container {
+    justify-content: space-between;
+
+    @include media-breakpoint-up('lg') {
+      transform: none !important;
+    }
+
+    @include media-breakpoint-up('lg') {
+      transform: none !important;
+    }
+
+    &.space-around {
+      @include media-breakpoint-up('lg') {
+        justify-content: space-around;
+      }
+    }
+  }
+
+  .icon-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .icon-card__title,
+  .icon-card__copy {
+    font-weight: $font-weight-normal;
+    max-width: 210px;
+    margin: 0 auto;
+  }
+
+  .icon-card__title {
+    margin-bottom: 10px;
+  }
+
+  .icon-card__copy {
+    color: $gr6;
+  }
+
+
+  &.icon-grid--w-tout {
+    padding: 44px 0 60px;
+    background: $gr2;
+
+    @include media-breakpoint-down('md') {
+      padding: 55px 0 80px;
+    }
+
+    .swiper-container {
+      @include media-breakpoint-down('md') {
+        display: none;
+      }
+    }
+
+    .banner__panel {
+      padding: 0;
+      margin-bottom: 15px;
+      @include media-breakpoint-down('md') {
+        margin-bottom: 0;
+      }
+    }
+
+    .icon-card__title {
+      margin-bottom: 5px;
+      color: $black;
+    }
+
+    .banner__text {
+      @extend .p1;
+      color: $gr6;
+      font-weight: $font-weight-normal;
+    }
+
+    .swiper-container {
+      margin-bottom: 45px;
+    }
+
+    .icon-grid-cta-container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &.icon-grid--dark {
+    background-color: $gr2;
+  }
+}

@@ -1,0 +1,44 @@
+.find-a-store {
+
+  .page-content {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .media-kit-cards-inner-wrapper {
+    display: flex;
+    
+    @include media-breakpoint-down("md") {
+      flex-direction: column;
+    }
+  }
+
+  .media-kit-card-inner-wrapper {
+    padding: 15px;
+
+    .card-image-container  {
+      max-width: 160px;
+
+      @include media-breakpoint-down("md") {
+        max-width: calc(100% - 50px);
+        margin-top: 0;
+      }
+    }
+  }
+
+  .media-kit-card {
+    width: 100%;
+    max-width: calc(100%/5);
+    padding: 0 10px;
+    min-height: initial;
+
+    @include media-breakpoint-down("md") {
+      max-width: 100%;
+    }
+  }
+
+  .card-image-container:before  {
+    padding-top: 100%;
+  }
+}

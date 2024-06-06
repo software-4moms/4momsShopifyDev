@@ -1,0 +1,140 @@
+// --------------------------------------------------------
+// Product Movement Section
+// --------------------------------------------------------
+
+// Notes: all px values pulled or inferred from comps where avialable
+
+.product-movement {
+  background-color: $white;
+  padding: 45px 0;
+
+  @include media-breakpoint-down('sm') {
+    padding: 10px 0; // module padding adjusted for mobile based on comps
+  }
+}
+
+.movement__text-container {
+  @include media-breakpoint-down('md') {
+    margin-top: 10px; // text spacing needed on mobile to match comps
+    margin-bottom: 30px;
+  }
+
+  // a color diff tool cited this text color as #7f7f7f
+  // which differs from the styles output by figma ($gr6)
+  .movement__body-text {
+    color: $gr6;
+    max-width: 320px;
+    margin: auto;
+  }
+}
+
+.motion-nav__mobile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include media-breakpoint-up('lg') {
+    display: none;
+  }
+}
+
+.motion-gif {
+  max-height: 460px;
+
+  @include media-breakpoint-down('sm') {
+    max-width: 170px; // value pulled from comps
+  }
+}
+
+.motion-nav__list-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 5px;
+
+  &.motion-nav__mobile {
+    justify-content: center;
+    flex-grow: 2;
+    margin-bottom: 10px;
+
+    a,
+    a:hover,
+    a:focus {
+      text-decoration: none;
+      color: $black;
+    }
+
+    @include media-breakpoint-down('sm') {
+      min-width: 33%;
+    }
+  }
+
+  .motion-nav__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $gr1;
+    padding: 10px 90px;
+    text-decoration: none;
+
+    @include media-breakpoint-down('lg') {
+      padding: 10px 45px;
+    }
+
+    // keeps all of the nav items inline and the same width
+    // while allowing for longer text if needed
+    .motion-nav__link-text {
+      min-width: 110px;
+      width: 30%;
+      margin: 0;
+    }
+  }
+
+  // base styleing for png icons
+  .icon-image {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+    object-fit: contain;
+    object-position: center;
+    size: 20px;
+
+    @include media-breakpoint-up('lg') {
+      margin: 0 45px 0 auto;
+    }
+  }
+
+  // base styleing for svg icons
+  .icon-svg {
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    background-color: $gr1;
+  }
+
+  .active-icon {
+    display: none;
+  }
+
+  .inactive-icon {
+    display: flex;
+  }
+
+  &.is-active {
+    .active-icon {
+      display: flex;
+    }
+
+    .inactive-icon {
+      display: none;
+    }
+
+    .motion-nav__link-text {
+      font-weight: bold;
+      text-transform: lowercase;
+    }
+  }
+}

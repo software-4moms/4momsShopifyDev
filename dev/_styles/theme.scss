@@ -1,0 +1,253 @@
+ /* Theme Project Styles
+  * ========================================================================== */
+
+
+/* Vendor
+ * ================================================================== */
+
+/**
+ * Import these up here to allow overrides down below.
+ * *NEVER* modify original vendor source, with the exception of the "collection"
+ * files that decide which components to import (e.g. `bootstrap.scss`). Either
+ * comment out imports or create override files and add them lower in the import list.
+ */
+
+@import "vendor/swiper.scss";
+@import "vendor/chosen.scss";
+
+/* Fonts
+  * ================================================================== */
+@import "core/font_face";
+@import "core/fonts";
+
+/* Initializers & Functions
+  * ================================================================== */
+
+/**
+ * ORDER IS IMPORTANT HERE. Import "native" Bootstrap first, then
+ * override with custom versions. These values are used in all subsequent SCSS.
+ */
+
+@import "bootstrap-modified/functions"; // Bootstrap
+@import "bootstrap-modified/variables"; // Bootstrap -> need to separate bootstrap vars from project vars
+
+@import "core/functions"; // Custom overrides
+@import "core/variables"; // Custom overrides
+
+/* Bootstrap Modified
+  * ================================================================== */
+
+/**
+ * Pulled from the MODIFIED Bootstrap boilerplate (original `core` files).
+ *
+ * Do not change these files directly. Instead, either comment out the imports
+ * you're not using, or override with files in the `_styles/core` folder.
+ *
+ * ORDER IS CRITICAL HERE. Import these up here to allow overrides down below.
+ */
+@import "bootstrap-modified/mixins"; // Bootstrap
+@import "bootstrap-modified/root"; // Bootstrap
+@import "bootstrap-modified/reboot"; // Bootstrap
+@import "bootstrap-modified/helpers"; // Custom
+@import "bootstrap-modified/images"; // Bootstrap
+@import "bootstrap-modified/code"; // Bootstrap
+@import "bootstrap-modified/grid"; // Bootstrap
+@import "bootstrap-modified/layout"; // Custom
+@import "bootstrap-modified/tables"; // Bootstrap
+@import "bootstrap-modified/forms"; // Bootstrap
+@import "bootstrap-modified/transitions"; // Bootstrap
+@import "bootstrap-modified/button-group"; // Bootstrap
+@import "bootstrap-modified/custom-forms"; // Bootstrap
+@import "bootstrap-modified/card"; // Bootstrap
+@import "bootstrap-modified/alert"; // Bootstrap
+@import "bootstrap-modified/close"; // Bootstrap
+@import "bootstrap-modified/modal"; // Bootstrap
+@import "bootstrap-modified/utilities"; // Bootstrap
+
+/* Core
+  * ================================================================== */
+
+/**
+  * Project-specific essential files. If overriding BS4 equivalents,
+  * Use the same file name, e.g.: `bootstrap-modified/forms`->
+  * `bootstrap-modified/forms`. Always customize the version in `/core`.
+  */
+
+
+ @import 'core/styleguide';
+ @import 'core/mixins';
+ @import 'core/type';
+ @import 'core/buttons';
+ @import 'core/forms';
+ @import 'core/colors';
+
+
+
+ /* Components
+  * ================================================================== */
+
+/**
+  * Components are small elements that may be re-used across
+  * multiple modules
+  */
+
+ @import 'components/icon';
+ @import 'components/drawer';
+ @import 'components/breadcrumbs';
+ @import 'components/page';
+ @import 'components/chosen';
+  @import 'components/banner';
+  @import 'components/arrows';
+  @import 'components/overlay';
+ @import 'components/slideshow';
+ @import 'components/video-player';
+ @import 'components/collection-tout';
+ @import 'components/overlay-card';
+ @import 'components/quick-link';
+ @import 'components/video-card-layer';
+
+
+
+ //  @import 'components/yotpo';
+//  @import 'components/newsletter-form';
+//  @import 'components/modal';
+//  @import 'components/wide-card';
+//  @import 'components/minimal-input';
+//  @import 'components/quantity-adjuster';
+//  @import 'components/dots';
+//  @import 'components/promo';
+//  @import 'components/frame';
+//  @import 'components/spacer';
+//  @import 'components/slideup';
+//  @import 'components/content';
+//  @import 'components/card';
+//  @import 'components/quick-view';
+//  @import 'components/docs';
+//  @import 'components/expandable-list';
+//  @import 'components/rte';
+//  @import 'components/pagination';
+//  @import 'components/social-sharing';
+//  @import 'components/panel';
+//  @import 'components/tabs';
+
+
+
+ /* Modules
+  * ================================================================== */
+
+/**
+  * Modules are larger pieces of functionality that consume components.
+  * It is common for there to only be one instance of each on a page.
+  */
+
+ @import 'modules/header';
+//  @import 'modules/footer';
+@import 'modules/warning-banner';
+  @import 'modules/pencil-banner';
+  @import 'modules/ajax-cart';
+ @import 'modules/product-detail';
+  @import 'modules/mobile-menu';
+ @import 'modules/product-movement';
+ @import 'modules/spec-tabs';
+//  @import 'modules/40-60-content';
+//  @import 'modules/collection-cards';
+//  @import 'modules/ugc-instagram';
+  @import 'modules/testimonials';
+//  @import 'modules/awards';
+ @import 'modules/icon-grid';
+ @import 'modules/fifty-fifty';
+//  @import 'modules/klaviyo-bis-modal';
+//  @import 'modules/short-banner';
+//  @import 'modules/product-features';
+//  @import 'modules/affirm-module';
+//  @import 'modules/featured-articles-carousel';
+  @import 'modules/category-navigation';
+//  @import 'modules/related-articles';
+//  @import 'modules/tout';
+//  @import 'modules/tout-expanded';
+//  @import 'modules/modal-video-player';
+//  @import 'modules/affirm-product-grid';
+//  @import 'modules/search-results';
+//  @import 'modules/reference-cards';
+//  @import 'modules/limespot-carousel';
+//  @import 'modules/ics-recall';
+ @import 'modules/overlay-card-grid';
+//  @import 'modules/jazz-hr-job-listing';
+ @import 'modules/team-grid';
+//  @import 'modules/reference-cards';
+//  @import 'modules/text-only';
+//  @import 'modules/header-country-modal';
+//  @import 'modules/contact-form';
+  @import 'modules/canadaPopUp';
+//  @import 'modules/threeRowModule';
+//  @import 'modules/countdown-timer';
+//  @import 'modules/page-3rowModule';
+@import 'modules/deal-product-offers';
+@import 'modules/countdown-timer';
+
+
+
+ /* Templates
+  * ================================================================== */
+
+/**
+  * Styles *specific* to a shopify template
+  * Only use if there is no less specific / more logical place to put styles
+  * Try to use the body template class as a CSS hook
+  */
+
+ @import 'templates/cart.scss';
+//  @import 'templates/collection.scss';
+//  @import 'templates/404.scss';
+//  @import 'templates/gift-card.scss';
+//  @import 'templates/customer.scss';
+//  @import 'templates/challenge.scss';
+//  @import 'templates/password.scss';
+//  @import 'templates/article.scss';
+ @import 'templates/media-kit.scss';
+//  @import 'templates/list-collection.scss';
+//  @import 'templates/find-a-store.scss';
+//  @import 'templates/list-collection.scss';
+//  @import 'templates/careers.scss';
+//  @import 'templates/register-product.scss';
+//  @import 'templates/cares.scss';
+//  @import 'templates/nominateNICU.scss';
+//  @import 'templates/sleep-experts.scss';
+//  @import 'templates/saleLandingPage.scss';
+//  @import 'templates/about-us.scss';
+
+
+ /* ADA Updates
+  * ================================================================== */
+
+/**
+  * These are style updates from imedia.com for our ADA update
+  */
+@import 'core/ada';
+
+body {
+  overflow-x: hidden;
+}
+#onetrust-banner-sdk{
+  will-change: transform;
+  transform: translateZ(0);
+}
+img{
+  transition: opacity $transition-duration-base $transition-timing-function-in;
+
+  .lazyload:not([src]) {
+    opacity: 0;
+  }
+
+  img.lazyloaded {
+    opacity: 1;
+  }
+}
+ .development-mode {
+   /* stylelint-disable-next-line selector-max-id */
+   #preview-bar-iframe,
+   .shopify-preview-bar {
+     display: none;
+   }
+ }
+

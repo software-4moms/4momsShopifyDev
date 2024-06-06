@@ -1,0 +1,16 @@
+.affirm-product-grid {
+  padding: 80px 0;
+
+  @include media-breakpoint-down('sm') {
+    padding: 50px 0;
+  }
+}
+
+.affirm-product-grid__title {
+  margin-bottom: 20px;
+  font-size: 25px;
+
+  @include media-breakpoint-down('md') {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,81 @@
+.country-modal {
+
+  .modal--country {
+    max-width: unset;
+  }
+
+  .modal-header {
+    border-bottom: none;
+
+    .close {
+      margin: -1rem -1rem -2rem auto;
+
+      @include media-breakpoint-down('sm') {
+        margin: -1rem -1rem -1rem auto;
+      }
+    }
+  }
+
+  .modal-dialog {
+    max-width: 1420px;
+    padding: 0 60px;
+
+    @include media-breakpoint-down('sm') {
+      padding: 0 20px;
+    }
+  }
+
+  .modal-body {
+    padding: 0 115px;
+  }
+
+  .region-title {
+    column-span: all;
+    font-weight: $font-weight-bold;
+    margin-bottom: 18px;
+  }
+
+  .country-list {
+    padding: 0;
+    list-style: none;
+
+    &--two-columns {
+      column-count: 2;
+    }
+  }
+
+  .single-country {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0;
+
+    a{
+      color: $black;
+      line-height: 28px;
+      text-decoration: none;
+
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+
+  .single-country-wrapper {
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .single-country__flag {
+    object-fit: cover;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

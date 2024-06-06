@@ -1,0 +1,123 @@
+// -------------------------
+// Pencil Banner
+// -------------------------
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #shopify-section-pencil-banner{
+    z-index: 10000;
+  }
+}
+
+.pencil-banner {
+  position: relative;
+  z-index: $zindex-pencil-banner;
+  padding: $pencil-banner-padding-vertical 0;
+  background-color: $pencil-banner-bg;
+  font-size: $font-size-sm;
+  text-align: center;
+
+  &, a {
+    color: $pencil-banner-text-color;
+  }
+  ul.swiper-wrapper{
+    padding: 0;
+  }
+} 
+
+.pencil-banner{
+  display: flex;
+  flex-direction: row;
+  padding-left: 2px;
+  padding-right: 2px;
+  
+
+}
+
+.swiper-container{
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.banner-slide{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  // width: 100%!important;
+  overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
+
+  .d-lg-block p {
+    margin: 0;
+  }
+
+  .d-block{
+    margin: 0 2%;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+
+    p {
+      margin: 0;
+    }
+}
+
+.d-block.d-lg-none{
+  padding: 0 7.5%;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+}
+}
+
+  
+
+
+@media only screen and (min-width: 992px) {
+  .banner-slide{
+    .d-lg-block{
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+    }
+
+    .d-block{
+      display: none !important ;
+    }
+  }
+}
+
+
+.pencil-arrow{
+  width: 45px!important;
+  height: 40px!important;
+  display: none;
+  position: absolute;
+  z-index: 10;
+  margin-top: 5px;
+}
+.arrow--left{
+  left: 0;
+  &:hover {
+    background-color: $black;
+    outline-offset: 1px;
+    -webkit-box-shadow: 0 5px 10px 5px rgba(255, 255, 255, 0.25);
+    box-shadow: 0 5px 10px 5px rgba(255, 255, 255, 0.25);
+  }
+}
+.arrow--right{
+  right: 0;
+  &:hover {
+    background-color: $black;
+    outline-offset: 1px;
+    -webkit-box-shadow: 0 5px 10px 5px rgba(255, 255, 255, 0.25);
+    box-shadow: 0 5px 10px 5px rgba(255, 255, 255, 0.25);
+  }
+}
+.showArrows{
+  display: block;
+}
+

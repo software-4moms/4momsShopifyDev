@@ -1,0 +1,56 @@
+.new_product_registration {
+  margin-bottom: 100px;
+
+  @include media-breakpoint-down('sm') {
+    margin-bottom: 50px;
+  }
+}
+
+
+.register-product__info-icon {
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  text-align: center;
+  background-color: $black;
+  color: $white;
+  display: block;
+  line-height: 14px;
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  right: 0px;
+  bottom: 15px;
+  text-decoration: none;
+
+  &:hover {
+    color: white;
+  }
+
+}
+.register-product-form {
+
+  .success-message {
+    color: $blue;
+  }
+
+  select.form-control {
+    border: 1px solid $black;
+    font-size: $font-size-sm;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    background-image: url(chevron.svg);
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    height: 45px;
+  }
+}
+
+.findModelNumberLink{
+  clear: both;
+  display: block;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+}

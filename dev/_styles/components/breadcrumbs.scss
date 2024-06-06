@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// Breadcrumbs
+// -----------------------------------------------------------------------------
+
+.breadcrumbs {
+  display: flex;
+  background-color: $gr2;
+  padding: 13px 0;
+
+  @include media-breakpoint-up('sm') {
+    display: block;
+  }
+}
+
+.breadcrumbs__crumb {
+  display: inline-block;
+  color: $black;
+  font-size: 12px;
+  text-decoration: none;
+
+  a{
+    font-size: inherit;
+    text-decoration: none;
+  }
+
+  &:not(:last-child) {
+    color: $gr6;
+    &:after {
+      display: inline-block;
+      content: $breadcrumb-separator;
+      padding: 0 5px;
+    }
+  }
+
+  &:last-child:not(:only-child) {
+
+  }
+}
+

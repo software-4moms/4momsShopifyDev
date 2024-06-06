@@ -1,0 +1,267 @@
+// -----------------------------------------------------------------------------
+// Banners
+// -----------------------------------------------------------------------------
+
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-up('lg') {
+    flex-direction: row;
+  }
+
+  .cta-group {
+    margin-top: 45px;
+  }
+}
+
+
+.banner__panel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 620px;
+
+  @include media-breakpoint-down('md') {
+    height: 550px;
+  }
+
+  @include media-breakpoint-up('lg') {
+    flex: (1 1 100%); // Make all panels equal width
+  }
+
+  &--small {
+    height: auto;
+
+    @include media-breakpoint-down('md') {
+      height: auto;
+    }
+  }
+
+  &--medium {
+    height: 400px;
+
+    @include media-breakpoint-down('md') {
+      height: 102px;
+    }
+
+    .banner__bg-image {
+      @include media-breakpoint-down('md') {
+        display: block;
+      }
+    }
+  }
+
+  &--light {
+
+    &, a,
+    .banner__title,
+    .banner__text {
+      color: $white;
+    }
+  }
+
+  // Modifier classes to make tall + short banners
+  .banner--small > & {
+    padding-top:    $banner-panel-padding-vertical-small;
+    padding-bottom: $banner-panel-padding-vertical-small;
+  }
+
+  .banner--medium > & {
+    padding-top:    $banner-panel-padding-vertical-medium;
+    padding-bottom: $banner-panel-padding-vertical-medium;
+  }
+
+  .banner--large > & {
+    padding-top:    $banner-panel-padding-vertical-large;
+    padding-bottom: $banner-panel-padding-vertical-large;
+  }
+}
+
+@include media-breakpoint-down('md'){
+  .banner__vertical-align {
+    &--top {
+      align-items: flex-start;
+      .banner__content-container {
+        margin-top: 20px;
+      }
+    }
+
+    &--bottom {
+      align-items: flex-end;
+      .banner__content-container {
+        margin-bottom: 20px;
+      }
+    }
+
+    &--center {
+      align-items: center;
+    }
+  }
+}
+
+.banner__bg-container,
+.banner__bg-image {
+  @include stretch-within;
+}
+
+.banner__bg-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .banner__bg-image--retina {
+    display: block;
+  }
+  .banner__bg-image--ldpi {
+    display: none;
+  }
+}
+
+.banner__video-container {
+  position: absolute;
+  padding-bottom: percentage(9/16);
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include media-breakpoint-down('md') {
+    height: 100%;
+    padding-bottom: percentage(9/16);
+    padding-left: 250%;
+  }
+}
+
+.banner__bg-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.banner__overlay {
+  @include stretch-within;
+
+  &--light {
+    background-color: $banner-panel-overlay-light-color;
+  }
+
+  &--dark {
+    background-color: $banner-panel-overlay-dark-color;
+  }
+}
+
+.banner__content-container {
+  position: relative;
+  margin: auto;
+  text-align: center;
+
+  // Center everything on mobile
+  // Apply these justification classes above large
+  @include media-breakpoint-up('md') {
+
+    &--left {
+      margin-left: 0;
+    }
+
+    &--right {
+      margin-right: 0;
+    }
+
+    // &--center {
+    //   //
+    // }
+  }
+}
+
+.banner__content-container-align {
+  text-align: center;
+  @include media-breakpoint-up('md') {
+    &--left {
+      text-align: left;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    // &--center {
+    // }
+  }
+}
+
+.banner__content-container-align-mobile {
+  @include media-breakpoint-down('md') {
+    &--left {
+      text-align: left;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    &--center {
+      text-align: center;
+    }
+  }
+}
+
+.banner__title,
+.banner__text {
+  margin-top: ($spacer * 1.5);
+  margin-bottom: ($spacer * 1.5);
+
+  @include media-breakpoint-down('md') {
+    &--hide-mobile{
+      display: none;
+    }
+  }
+}
+
+.banner__title {
+  line-height: 1.1;
+  text-transform: none; // Undo the default heading text transformation to allow them to type upper / lowercase
+  color: $black;
+  font-size: 36px;
+}
+.collection-banner_title{
+  color: #fff;
+  text-align: center;
+  font-size: 64px;
+  font-weight: bold;
+  letter-spacing: .1rem;;
+  @include media-breakpoint-down('md') {
+    font-size: 2.5rem;
+  }
+}
+
+#banner__panel-quickStart .collection-banner_title{
+  color: #000;
+}
+
+.banner__text {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+.banner__panel-collection-secondary{
+  @include media-breakpoint-down('md') {
+  height: 250px;
+  }
+
+}
+
+#banner__panel-1580224647310 .banner_panel{
+  height: 100px;
+}

@@ -1,0 +1,47 @@
+.modal--serial-info {
+  &.modal-lg {
+    max-width: none;
+
+    .modal-dialog {
+      max-width: 800px;
+    }
+  }
+
+  .modal-header {
+    border-bottom: 0;
+    padding: 0;
+
+    .icon-close {
+      width: 28px;
+      height: 28px;
+      margin: 0 0 0 auto;
+
+      path {
+        stroke: $black;
+      }
+    }
+  }
+
+  .modal-content {
+    border: none;
+    border-radius: 0;
+
+    @include media-breakpoint-down('md') {
+      padding: 15px;
+    }
+  }
+
+  .modal-body {
+    padding: 15px 40px 40px;
+
+    img {
+      max-height: 500px;
+      width: auto;
+      max-width: 100%;
+    }
+
+    @include media-breakpoint-down('md') {
+      padding: 0px 20px 20px;
+    }
+  }
+}

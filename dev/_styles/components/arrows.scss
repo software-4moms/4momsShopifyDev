@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// Arrows
+// -----------------------------------------------------------------------------
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: $arrow-dimension;
+  width: $arrow-dimension;
+  padding: $arrow-padding;
+  background-color: $arrow-bg;
+  border-radius: $arrow-border-radius;
+  overflow: hidden;
+  cursor: pointer;
+  vertical-align: top;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+
+  // No focus here because slideshow a11y causes these to keep focus at weird times
+  &:hover {
+    background-color:#000;
+    outline-offset: 1px;
+    -webkit-box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+    box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+  }
+
+  &--right {
+    transform: rotate(-90deg);
+    &:hover{
+      -webkit-box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+      box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+    }
+  }
+
+  &--left {
+    transform: rotate(90deg);
+    &:hover{
+      -webkit-box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+      box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+    }
+  }
+
+  &--up {
+    transform: rotate(180deg);
+  }
+
+  svg.chevron-full {
+    path {
+      fill: transparent;
+      stroke: $white;
+      stroke-width: 2;
+    }
+  }
+
+  &.arrow--transparent {
+    background-color: transparent !important;
+    
+    svg.chevron-full {
+      path {
+        fill: transparent;
+        stroke: $black;
+      }
+    }
+  }
+}
+
+.arrow__icon {
+  position: relative;
+  width: $arrow-icon-length;
+  height: $arrow-icon-width;
+  background-image: url('chevron.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

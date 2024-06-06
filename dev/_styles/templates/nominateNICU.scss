@@ -1,0 +1,101 @@
+.template-page-nominateNICU {
+
+    .banner__panel {
+      margin-bottom: 10px;
+  
+      @include media-breakpoint-down("md") {
+        margin-bottom: 0;
+      }
+    }
+    .tout-expanded {
+        padding: 95px 0 80px;
+        text-align: center;
+    
+        @include media-breakpoint-down("md") {
+          padding: 75px 0 65px;
+        }
+    
+        .tout-expanded__title {
+          font-size: 28px;
+          margin-bottom: 25px;
+        }
+      }
+
+    .tout {
+      padding: 95px 0 80px;
+  
+      @include media-breakpoint-down("md") {
+        padding: 75px 0 65px;
+      }
+  
+      .tout__title {
+        font-size: 28px;
+        margin-bottom: 25px;
+      }
+    }
+  
+    .blog-module {
+      margin-bottom: 25px;
+  
+      @include media-breakpoint-down("md") {
+        margin-bottom: 0;
+      }
+  
+      .fifty-fifty-content {
+        margin-bottom: 20px;
+        @include media-breakpoint-down("md") {
+          margin-bottom: 50px;
+        }
+      }
+  
+      .content-grid__item {
+        @include media-breakpoint-down("md") {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  
+    .reference-cards {
+      margin-bottom: 50px;
+  
+      @include media-breakpoint-down("md") {
+        margin-bottom: 0;
+      }
+  
+      .reference-cards__col {
+        @include media-breakpoint-down("md") {
+          margin-bottom: 10px;
+        }
+  
+        &:last-child {
+          @include media-breakpoint-down("md") {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  
+    .fifty-fifty-content {
+      margin-bottom: 10px;
+  
+      &:last-child {
+        margin-bottom: 50px
+      }
+    }
+  
+    .collection-card__cta {
+      @include media-breakpoint-down("md") {
+        padding: 12px 20px;
+      }
+  
+      .collection-card__card-text {
+        @include media-breakpoint-down("md") {
+          margin-bottom: 35px;
+        }
+      }
+    }
+  }
+  .blog-module a.btn.btn-primary{
+    display: none !important;
+  }  
+

@@ -1,0 +1,267 @@
+// -------------------------
+// Product Card
+// -------------------------
+
+.product-card {
+  height: 100%;
+}
+
+.product-card__gallery {
+  position: relative;
+  width: 100%;
+  margin-bottom: 11px;
+  overflow: hidden;
+
+  .product-card__qv-trigger-wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 55px;
+    text-align: center;
+  }
+}
+
+//Safari specific styles to address hover state issues
+@media not all and (min-resolution:.001dpcm){
+  @supports (-webkit-appearance:none) {
+
+    .product-card__gallery {
+      display: flex;
+      height: 100%;
+    }
+
+    .product-card__gallery  a {
+      display: block;
+      width: 100%;
+    }
+
+    .product-card__gallery-image {
+      width: 100%;
+    }
+  }
+}
+
+
+.product-card__gallery-image {
+  height: 100% !important;
+  padding-bottom: initial !important;
+
+  &,
+  img {
+    width: 100%;
+  }
+}
+
+.product-card__gallery-image--alt {
+  @include stretch-within;
+  background: $body-bg;
+  opacity: 0;
+  transition: opacity $transition-timing-function-out $transition-duration-base;
+
+  // We add the class 'alt-loaded' to the product card so we know it's safe to display the alt image
+  .product-card.alt-loaded:hover &,
+  .product-card.alt-loaded:focus & {
+    opacity: 1;
+    transition: opacity $transition-timing-function-in $transition-duration-fast;
+  }
+}
+
+.product-card__gallery-placeholder {
+  @include stretch-within;
+  background: $body-bg;
+  opacity: 1;
+
+  // Hide the placeholder once the loading is complete
+  .is-loaded & {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $transition-timing-function-out $transition-duration-base;
+  }
+}
+
+.product-card__info {
+  text-align: $product-card-text-align;
+}
+
+.product-card__info-swatches {
+  margin-bottom: 15px;
+}
+
+.product-card__info-price {
+  margin-bottom: 15px;
+}
+
+.product-card__info-title {
+  font-size: $product-card-title-size;
+}
+
+.product-card__info-price {
+  font-size: $product-card-price-size;
+
+  // Gray out crossed out price
+  s {
+    color: $gray;
+  }
+}
+
+
+.product-card__qv-trigger-wrap {
+  display: none;
+  opacity: 0;
+  transition: opacity $transition-timing-function-out $transition-duration-base;
+
+  @include media-breakpoint-up('md') {
+    display: block;
+  }
+
+  .product-card:hover &,
+  .product-card:focus & {
+    opacity: 1;
+    transition: opacity $transition-timing-function-in $transition-duration-fast;
+  }
+}
+
+.product-card {
+  background-color: $gr2;
+  padding: 70px 0 30px;
+  transition: padding 150ms ease-in-out;
+  overflow: hidden;
+
+  @include media-breakpoint-down("md"){
+    background-color: transparent;
+    padding: 0;
+  }
+
+  @include media-breakpoint-up("lg"){
+    padding-top: 40px;
+  }
+
+  @include media-breakpoint-up('xl'){
+    padding-top: 70px;
+  }
+}
+
+.product-card__short-description {
+  font-weight: $font-weight-normal;
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: $gr6;
+}
+
+.product-card__gallery-image:not(.product-card__gallery-image--alt) {
+  position: relative;
+}
+
+.product-card__gallery {
+  margin-bottom: 40px;
+  transition: margin 150ms ease-in-out;
+
+  @include media-breakpoint-down("md"){
+    background-color: $gr2;
+    margin-bottom: 10px;
+  }
+}
+
+.product-card__gallery-image {
+  max-width: 230px;
+  margin: 0 auto;
+
+  img {
+    position: relative;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include media-breakpoint-down("md"){
+  height: 225px;
+  max-height: 225px;
+  min-height: 225px;
+  }
+}
+
+.product-card__contents {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-down("md"){
+    justify-content: flex-start;
+  }
+}
+
+.product-card__info {
+  text-align: left;
+  padding: 0 30px;
+  position: relative;
+  transition: margin 150ms ease-in-out;
+
+  @include media-breakpoint-down("md"){
+    padding: 0;
+  }
+}
+
+.product-card__info-title a,
+.product-card__info-price {
+  font-size: 16.5px;
+  color: $black;
+  font-weight: $font-weight-normal;
+  transition: margin 150ms ease-in-out;
+  text-decoration: none;
+
+  @include media-breakpoint-down("md"){
+    font-size: 15px;
+  }
+}
+
+.product-card__info-title{
+  margin-bottom: 5px;
+}
+
+.product-card-hover-info {
+  display: none;
+
+  @include media-breakpoint-down("md"){
+    display: none !important;
+  }
+}
+
+.product-card__shop-now {
+  width: 100%;
+  transition-property: height, opacity;
+  transition: 200ms ease-in-out;
+  .btn-primary{
+    padding: 14px 0 !important;
+  }
+
+  .btn {
+    width: 100%;
+    white-space: nowrap;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.prodcut-card__info-price {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: $black;
+}
+
+.product-card-wrapper {
+  margin-bottom: 20px;
+
+  @include media-breakpoint-up("lg"){
+    height: 500px;
+  }
+
+  .mobile-sold-out {
+    @include media-breakpoint-up("lg"){
+      display: none;
+    }
+
+    font-weight: $font-weight-bold;
+    margin: 7px 0 0;
+  }
+}

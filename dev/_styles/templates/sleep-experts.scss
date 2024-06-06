@@ -1,0 +1,23 @@
+.template-page-sleep-experts {
+  .banner__panel {
+    margin-bottom: 10px;
+
+    @include media-breakpoint-down("md") {
+      margin-bottom: 0;
+    }
+  }
+  .sleep-expert-header{
+     margin-top: 70px;
+     margin-bottom: 30px;
+   }
+   .sleep-expert-header__title {
+     margin-bottom: 40px;
+   }
+  .fifty-fifty-content {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 50px
+    }
+  }
+}

@@ -1,0 +1,223 @@
+// -------------------------
+// Forms
+// -------------------------
+
+input[type="file"],
+input[type="radio"],
+input[type="checkbox"] {
+  &:focus {
+    outline: none;
+  }
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+
+  .checkbox__input {
+    .input-checkbox {
+      border-radius: 0;
+
+      &:checked {
+        box-shadow: 0 0 0 10px $black inset !important;
+      }
+
+    }
+  }
+
+  .checkbox__label {
+      @extend .p1;
+  }
+}
+
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+
+  .radio__input {
+    .input-radio {
+
+
+      &:checked {
+        background-color: $black;
+        box-shadow: 0 0 0 2px $white inset !important;
+        border: 1px solid $black;
+        &:after {
+          background-color: $black;
+        }
+      }
+    }
+  }
+
+  .radio__label__primary br {
+    display: none;
+  }
+
+  .checkbox__label {
+    @extend .p1;
+  }
+}
+
+.field {
+  width: 100% !important;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  + .field {
+    margin-top: 10px;
+  }
+}
+
+.field__input {
+  @extend .form-control;
+  .boxshadow & {
+    box-shadow: none !important;
+  }
+}
+
+.field__input-wrapper {
+  @extend .form-group;
+  margin-bottom: 30px;
+
+  .field__label.field__label--visible {
+    @extend .p2;
+    color: $black !important;
+    font-weight: 400 !important;
+  }
+
+  input.field__input {
+
+    &::placeholder {
+      @extend .p1;
+      color: $gr5;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+.field,
+.field__input {
+  .field__input--select {
+    border-radius: 10px;
+    border: 1px solid $black;
+  }
+}
+
+.floating-labels {
+  .field--show-floating-label {
+    .field__input {
+      padding: 13px 20px;
+      min-height: 50px;
+      border-color: $black;
+    }
+    .field__caret {
+      border-left: 0px transparent solid;
+      top: 43%;
+    }
+  }
+}
+
+.field__input--iframe-container {
+}
+
+.field__input-wrapper--select {
+  .field__input.field__input--select {
+    border-radius: 10px;
+  }
+  // Hide the down caret from checkout since we already have our own
+  &:before {
+    display: none;
+  }
+}
+
+.field__caret {
+  border-left-color: $input-border-color;
+  transform: translate(0, 0); // Undo transform translation
+
+  .field--active & {
+    border-left-color: $input-border-color;
+
+    .icon-svg--color-adaptive-lighter {
+      color: $input-border-color;
+    }
+  }
+}
+
+.element-toggler {
+  overflow: visible; // default cuts off checkbox / radio button shadows
+}
+
+.fieldset-description {
+  margin-top: 1.5em;
+}
+
+.floating-labels {
+
+  .field__label {
+    position: static;
+    padding-left: 0;
+    padding-right: 0;
+    opacity: 1;
+    font-weight: bold !important;
+    transform: translateY(0);
+  }
+}
+
+[data-address-field] {
+  .field__input-wrapper--select .field__input.field__input--select {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-position-x: calc(100% - 20px);
+  }
+
+  .field__caret {
+    display: none;
+  }
+}
+
+// --------------------------------
+// Payment Form
+// --------------------------------
+
+.field__input.field__input--iframe-container {
+  padding: 0;
+}
+.content-box div.field__input  {
+  border-color: black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0;
+}
+
+.card-fields-container--loaded.field__input--iframe-container {
+  padding: 5px 0 0;
+  border-bottom: 1px solid $black;
+}
+
+.content-box__row--secondary {
+  background-color: transparent;
+}
+
+.field__icon {
+  .field__icon-svg {
+    position: absolute;
+    top: 60%;
+  }
+}
+
+.field--show-floating-label {
+  .field__input--iframe-container {
+    padding: 0 !important;
+  }
+}
+
+.address-fields {
+  div[data-address-field="country"],
+  div[data-address-field="province"] {
+    @media (min-width: $checkout-bp-md-min) {
+      width: 50% !important;
+    }
+  }
+}
+

@@ -1,0 +1,43 @@
+.tags-navigation {
+  text-align: center;
+  margin: 40px 0;
+
+  @include media-breakpoint-down('md'){
+    margin: 40px 0 50px;
+    display: flex;
+    overflow: scroll;
+  }
+
+  .tag-category {
+    font-weight: $font-weight-normal;
+    padding: 10px 30px;
+    transition: all 150ms ease-in-out;
+    display: inline-block;
+
+    @include media-breakpoint-down('md'){
+      white-space: nowrap;
+      display: block;
+    }
+
+    a {
+      font-size: 15px;
+    }
+
+    &:hover,
+    &.active {
+      background-color: $gr2;
+      font-weight: $font-weight-bold;
+
+      a{
+        color: $black;
+      }
+    }
+  }
+}
+
+.content-grid__item.category-card {
+  @include media-breakpoint-down('md'){
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,130 @@
+// -------------------------
+// Breadcrumbs
+// -------------------------
+
+.breadcrumb__item {
+  &.breadcrumb__item--blank {
+    .breadcrumb__text,
+    &:after,
+    &:before,
+    a {
+      color: $gr5;
+    }
+  }
+
+  &.breadcrumb__item--current {
+
+    .breadcrumb__text,
+    &:after,
+    &:before,
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+  &.breadcrumb__item--completed {
+
+    .breadcrumb__text,
+    &:after,
+    &:before,
+    a {
+      color: $gr5;
+      text-decoration: none;
+    }
+  }
+}
+// Shared styles
+// -----------------------------
+
+.banner > .wrap,
+.main__header {
+  counter-reset: breadcrumbs;
+  .breadcrumb {}
+
+  .breadcrumb__item {
+    &:first-child {
+      display: none;
+    }
+  }
+}
+
+// Mobile only styles
+// --------------------------
+
+.banner > .wrap {
+  flex-direction: column;
+  .breadcrumb {
+    margin: 0 auto;
+    width: 340px;
+
+    &.breadcrumb--right,
+    &.breadcrumb--left,
+    &.breadcrumb--center {
+      text-align: center !important;
+      -webkit-box-pack: center !important;
+      -webkit-justify-content: space-between !important;
+      -ms-flex-pack: center !important;
+      justify-content: space-between  !important;
+    }
+  }
+  .breadcrumb__item {
+
+    &:after {
+      content: ">";
+      margin-left: 12px;
+    }
+
+    &:before {
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 10px;
+      counter-increment: breadcrumbs;
+      content: counter(breadcrumbs) '.';
+    }
+
+    &:last-child:after {
+      content: "";
+    }
+
+    svg {
+      display: none;
+    }
+  }
+}
+
+// Web only styles
+// --------------------------
+
+.main__header {
+  .breadcrumb {
+    &.breadcrumb--right,
+    &.breadcrumb--left,
+    &.breadcrumb--center {
+      text-align: left !important;
+      -webkit-box-pack: left !important;
+      -webkit-justify-content: flex-start !important;
+      -ms-flex-pack: left !important;
+      justify-content: flex-start !important;
+    }
+
+    @media (max-width: $checkout-bp-md-min) {
+      display: none;
+    }
+  }
+
+  .breadcrumb__item {
+    padding-right: 25px;
+
+    &:before {
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 10px;
+      counter-increment: breadcrumbs;
+      content: counter(breadcrumbs) '.';
+    }
+
+    svg {
+      display: none;
+    }
+  }
+}

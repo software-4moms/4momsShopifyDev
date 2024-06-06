@@ -1,0 +1,130 @@
+.spec-tabs {
+
+  .accordion {
+    padding: 40px 0;
+  }
+
+  .card {
+    margin-bottom: 5px;
+    border: none;
+  }
+
+  .card-header{
+    background-color: $gr2;
+    padding: 0;
+
+    .card-header__title {
+      text-decoration: none;
+      padding: 25px 40px;
+
+      &:hover {
+        color: $black;
+      }
+
+      @include media-breakpoint-down("md"){
+        padding: 10px 15px;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .collapsed .card-header__title-icon-trigger,
+  .card-header__title-icon-trigger{
+    transform: inherit;
+  }
+
+  .card-header__title-icon-trigger{
+    margin-bottom: -5px;
+
+    &:after{
+      transform: rotate(90deg) translateY(-1px);
+      transition: all 150ms ease-in-out;
+    }
+  }
+
+  .collapsed .card-header__title-icon-trigger:after{
+    transform: translateX(-1px);
+  }
+
+
+  .card-body {
+    padding: 60px 80px;
+    @include media-breakpoint-down("md"){
+      padding: 40px 15px;
+    }
+
+    p{
+      font-weight: $font-weight-normal;
+      color: $gr6;
+    }
+
+    p strong {
+      @extend .h5;
+      color: $black;
+    }
+
+    &.card-body--column-reverse{
+      @include media-breakpoint-down("md"){
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  .specification-image {
+    @include media-breakpoint-down("md"){
+      margin-bottom: 25px;
+    }
+  }
+
+  .spec-image {
+    width: 100%;
+  }
+
+  div[data-bv-show="questions"],
+  div[data-bv-show="reviews"] {
+
+
+    .bv-cv2-cleanslate .bv-content-placeholder,
+    .bv-header .bv-action-bar{
+      margin: 0 !important;
+    }
+
+    .bv-cv2-cleanslate .bv-content-placeholder,
+    .bv-header .bv-action-bar,
+    .bv-cleanslate .bv-masthead {
+      background-color: $white !important;
+    }
+
+    .bv-rating-stars-container.bv-rating-none {
+      display: none !important;
+    }
+
+    ol.bv-content-list.bv-content-list-questions {
+      margin: 20px 0 !important;
+    }
+
+    ol.bv-content-list.bv-content-list-questions li.bv-cv2-cleanslate .bv-content-item.bv-content-review,
+    li.bv-cv2-cleanslate .bv-content-item{
+      margin: 0 0 10px !important;
+      border-bottom: 0 !important;
+    }
+  }
+}
+
+
+
+
+
+
+
+.tabs-for-pages-bottomSection{
+  margin-bottom: 100px;
+}
+.tabs_for_pages{
+  color: #000;
+  p, ul, li, ol{
+  color: #000!important;
+  font-size: 14px;
+  font-weight: 300;
+  }
+}

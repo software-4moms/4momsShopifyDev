@@ -1,0 +1,100 @@
+.stylguide-mobile {
+  h1,
+  %h1,
+  .h1 { 
+    font-size: 30px;
+    line-height: 42px;
+    letter-spacing: 0;
+  }
+
+  h2,
+  %h2,
+  .h2 { 
+    font-size: 25px;
+    line-height: 31px;
+    letter-spacing: 0.05em; 
+  }
+
+  h3,
+  %h3,
+  .h3 { 
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.05em; 
+  } 
+}
+
+.docs-well {
+  .swiper-pagination {
+    position: unset;
+    display: inline-block;
+    margin: 30px 0;
+  }
+}
+
+svg.icon-close--big {
+  width: 30px;
+  height: 30px;
+}
+
+.pagination {
+  margin: 30px 0;
+}
+
+
+.styleguide-icons {
+  li svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.logo-icons {
+  li svg {
+    width: 220px;
+    height: 120px;
+  }
+}
+
+svg.icon.icon-location path{
+  &:first-child{
+    fill: $white;
+    stroke: $black;
+  }
+
+  &:last-child{
+    fill: $white;
+    stroke: $black;
+  }
+}
+
+.movement-icons,
+.general-icons {
+  svg.icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  &.general-icons--fill {
+    svg.icon.icon--full-color path,
+    svg.icon.icon--full-color circle {
+      fill: transparent;
+    }
+  }
+}
+
+.docs-well--black {
+  &,
+  form,
+  input,
+  .form-group {
+    background-color: $black;
+  }
+
+  .form-group {
+    margin-bottom: 40px;
+  }
+}
+
+
+

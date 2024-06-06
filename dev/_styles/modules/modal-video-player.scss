@@ -1,0 +1,48 @@
+.modal-video-player {
+  margin-bottom: 15px;
+}
+
+.modal-video-player__container {
+  padding-bottom: percentage(620/1540);
+  position: relative;
+
+  @include media-breakpoint-down('sm') {
+    padding-bottom: percentage(9/16);
+  }
+
+  .modal-video-player__play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .icon-play {
+      height: 45px;
+      width: 45px;
+    }
+  }
+}
+
+.modal-video-player__bg-image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  object-position: center;
+
+  &--retina {
+    display: none;
+  }
+
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+  .modal-video-player__bg-image--retina {
+    display: block;
+  }
+  .modal-video-player__bg-image--ldpi {
+    display: none;
+  }
+}

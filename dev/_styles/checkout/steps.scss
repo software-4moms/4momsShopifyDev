@@ -1,0 +1,183 @@
+// -------------------------
+// Steps
+// -------------------------
+
+.step__footer {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+
+
+  .step__footer__continue-btn {
+    @extend .btn-primary;
+    margin-bottom: 30px;
+  }
+}
+
+.step__footer__previous-link {
+
+  svg {
+
+  }
+
+  &:hover {
+    svg {
+
+    }
+  }
+}
+
+.total-recap__final-price {
+  font-size: 15px;
+}
+
+.section__title {
+  font-family: $font-family-sans-serif;
+}
+
+// --------------------------
+// Information
+// --------------------------
+
+div.step[data-step="contact_information"] {
+  .layout-flex__item {
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+// express checkout btn overrides
+// -------------------------------------------
+
+.dynamic-checkout {
+  margin-top: 45px;
+}
+
+.dynamic-checkout__content {
+  // padding-left: 0 !important;
+  // padding-right: 0 !important;
+
+  div[data-shopify-buttoncontainer] {
+    display: flex !important;
+    justify-content: center;
+
+    div[data-testId="grid-cell"] {
+      flex: 1 0 100% !important;
+      margin: auto !important;
+    }
+  }
+}
+
+.dynamic-checkout__title {
+  display: none !important;
+}
+
+.dynamic-checkout__content {
+  border: 0px #e6e6e6 solid;
+  border-top: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 0.92857em 1.42857em 1.42857em;
+}
+
+.alternative-payment-separator__content {
+  display: none;
+}
+
+// --------------------------------------------
+// Payment
+// --------------------------------------------
+
+@media (max-width: $checkout-bp-md-min) {
+
+  .order-summary__section--discount {
+    display: none;
+  }
+
+  div.step[data-step="payment_method"] {
+    .edit_checkout {
+      // show text rather than icon on mobile
+      .btn__content.visually-hidden-on-mobile {
+        position: relative;
+      }
+
+      // hide icon rather on mobile
+      .icon-svg.icon-svg--size-16.btn__icon.shown-on-mobile {
+        display: none;
+      }
+    }
+
+     // re-order child secitons
+     .step__sections {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step__sections > div:nth-child(1) {
+      order: 2;
+    }
+
+    .step__sections > div:nth-child(2) {
+      order: 1;
+      padding-top: 0;
+      border-bottom: 1px solid $gr5;
+
+      .section__title {
+        display: none;
+      }
+
+      .field__label.field__label--visible {
+        visibility: hidden;
+      }
+    }
+
+    .step__sections > form:nth-child(3) {
+      order: 3;
+    }
+  }
+}
+
+[data-payment-method] {
+  .radio__label.payment-method-wrapper {
+    label.radio__label__primary.content-box__emphasis {
+      display: none;
+    }
+
+    .radio__label__accessory .payment-icon-list__more {
+      display: none;
+    }
+  }
+}
+
+
+// --------------------------------------------
+// Thank You page
+// --------------------------------------------
+
+.page--thank-you {
+
+  .section__header.os-header {
+    svg {
+      display:  none;
+    }
+  }
+
+  .content-box__row {
+    padding-left: 0 !important;
+  }
+
+  .os-header__title {
+    @extend .h4;
+  }
+  .heading-2.os-step__title {
+    @extend .h4
+  }
+
+  .content-box__row.content-box__row--no-border {
+    h2 {
+      @extend .h4;
+    }
+  }
+
+}
+

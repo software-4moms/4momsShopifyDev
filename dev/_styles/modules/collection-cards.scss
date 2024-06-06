@@ -1,0 +1,220 @@
+.collection-cards {
+  .container {
+    @include media-breakpoint-down('md') {
+      max-width: 100%;
+    }
+  }
+  // decreases gutter width for collection cards to be 5px total in order to match comps.
+  .col-min-gutter {
+    padding-left: 2.5px !important;
+    padding-right: 2.5px !important;
+  }
+}
+.collection-card {
+  position: relative;
+  margin-bottom: 5px;
+  display: block;
+  text-decoration: none;
+  @include media-breakpoint-down('md') {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 10px;
+    background-color: $gr2;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .card-image-wrapper{
+    position: relative;
+    // background-color: red;
+    margin-right: 5px;
+    margin-left: 5px;
+    @include media-breakpoint-down('md') {
+      width: 40%;
+    }
+    img.card-image {
+      position: absolute;
+      object-fit: scale-down;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+    img.card-image.card-image--secondary {
+      object-fit: cover;
+      padding: 0;
+      opacity: 0;
+      transition: all 150ms ease-in-out;
+    }
+    img.card-image.card-image--secondary-BG{
+      object-fit: cover;
+      padding: 0;
+      opacity: 0;
+      transition: all 175ms ease-in-out;
+    }
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: percentage(230/300);
+   }
+  }
+  &--square {
+    background-color: $gr1;
+    .card-image-wrapper {
+      width: 100%;
+      background-color: $gr1;
+      &:before {
+        padding-top: percentage(508/508);
+      }
+    }
+    .collection-card__cta {
+      padding: 60px;
+      margin: 0;
+      @include media-breakpoint-only('lg') {
+        padding: 30px;
+      }
+      @include media-breakpoint-down('md') {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        max-width: none;
+        svg {
+          position: static;
+          margin-bottom: 0;
+          transform: rotate(-90deg);
+        }
+      }
+      @include media-breakpoint-down('sm') {
+        padding: 10px 20px;
+      }
+    }
+  }
+  &.has-secondary-image:hover {
+    @include media-breakpoint-up('lg') {
+      img.card-image {
+        opacity: 0;
+      }
+      img.card-image.card-image--secondary {
+        opacity: 1;
+      }
+      img.card-image.card-image--secondary-BG {
+        opacity: 1;
+      }
+      // .collection-card__cta-link {
+      //    color: $white;
+      // }
+    }
+  }
+}
+.collection-card__cta {
+  position: absolute;
+  top: 0;
+  margin: 40px;
+  color: $black;
+  @include media-breakpoint-down('md') {
+    position: relative;
+    width: 60%;
+    max-width: 250px;
+    margin: 0;
+    padding: 0 20px;
+  }
+  a {
+    padding-right: 15px;
+    color: $black;
+  }
+  svg {
+    transform: rotate(-90deg);
+    width: 22px;
+    @include media-breakpoint-down('md') {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+      margin-left: 20px;
+      right: 0;
+    }
+  }
+  svg path {
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+  }
+}
+.collection-card__card-text {
+  margin-bottom: 25px;
+  margin: 0;
+  @include media-breakpoint-down('md') {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}
+// .collection-card__cta-link {
+//   transition: color 150ms ease-in-out;
+// }
+.homepage-collection-cards{
+  .collection-card{
+    img.card-image{
+      @include media-breakpoint-down('md') {
+        opacity: 0;
+      }
+    }
+    img.card-image.card-image--secondary {
+      @include media-breakpoint-down('md') {
+        opacity: 1;
+      }
+    }
+    img.card-image.card-image--secondary-BG {
+      @include media-breakpoint-down('md') {
+        opacity: 0;
+      }
+    }
+  } 
+  .collection-card__cta {
+    font-size: 22px;
+    line-height: 27px;
+    position: absolute;
+    top: 40px;
+    background-color: #fff;
+    width: 250px;
+    padding: 10px 5px;
+    text-align: right;
+    border-radius: 0 2.5px 2.5px 0;
+    color: $black;
+    margin: 0;
+    @include media-breakpoint-down('md') {
+      position: relative;
+      width: 60%;
+      max-width: 250px;
+      padding: 0 20px;
+      top: 0;
+      background-color:rgba(255,255,255,0);
+      text-align: left;
+    }
+  
+    a {
+      padding-right: 15px;
+      color: $black;
+    }
+  
+    svg {
+      transform: rotate(-90deg);
+      width: 22px;
+  
+      @include media-breakpoint-down('md') {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        margin-left: 20px;
+        right: 0;
+      }
+    }
+  
+    svg path {
+      fill: transparent;
+      stroke: currentColor;
+      stroke-width: 1.5px;
+    }
+  }
+}

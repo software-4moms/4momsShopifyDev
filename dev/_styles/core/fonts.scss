@@ -1,0 +1,20 @@
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+
+/**
+ * TODO: Update instructions and templates below with latest font scenarios:
+ * externally hosted, internally hosted, Typography.com caveats. Update instruction
+ */
+
+/* Original Instructions
+ * ================================================================== */
+
+// Import your fonts using the font-face mixin built for shopify assets
+// Make sure to set the font-weight / font-style correctly for each one that you include.
+// The second argument is the filename *excluding* the file extension.  This allows us to generate all the extensions inside the mixin.
+
+// @include font-face('Century Gothic', 'GOTHIC', 300);
+// @include font-face('Century Gothic', 'GOTHIC', 400);
+// @include font-face('Century Gothic', 'GOTHICB', 700);
+@import url("https://use.typekit.net/nxr8lcs.css");

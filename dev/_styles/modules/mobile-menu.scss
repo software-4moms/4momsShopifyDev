@@ -1,0 +1,68 @@
+// -------------------------
+// Mobile Menu
+// -------------------------
+
+.mobile-menu-block {
+
+  & + & {
+    margin-top: 30px;
+  }
+
+  &--primary {
+
+  }
+
+  &--secondary {
+
+  }
+
+  &--social {
+
+    li {
+      display: inline-block;
+      margin: 0 6px;
+    }
+
+    a {
+      padding: 5px;
+    }
+
+    .icon {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  input[type="search"]{
+    border-radius: 0;
+    border-color: black;
+    border-width: 0px 0 1px 0px;
+    padding: 0 0 0 30px;
+    font-size: 15px;
+    font-weight: $font-weight-normal;
+  }
+
+  button[type="submit"].minimal-input-box__submit {
+    left: 0;
+    width: 20px;
+
+    svg path:first-child {
+      stroke: $black;
+      fill: transparent;
+    }
+
+    svg path:last-child {
+      stroke: black;
+    }
+  }
+
+  .expandable-list__header-title {
+    text-decoration: none;
+  }
+}
+
+.mobile-menu-list {
+  @include list-unstyled;
+  margin-bottom: 0;
+  text-align: center;
+}

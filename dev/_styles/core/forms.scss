@@ -1,0 +1,221 @@
+/*
+ * ==========================================================================
+ * Forms
+ * =========================================================================
+ */
+
+ .sr-only{
+  border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+
+  label {
+    font-size: 12px;
+  }
+
+  input.form-control,
+  input.form-control.is-valid,
+  input.form-control.is-invalid,
+  input.form-control[readonly] {
+    border: solid;
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+    padding: 6px 0;
+    color: $black;
+    border-color: $black;
+    box-shadow: none;
+    height: 50px;
+    background-color: transparent;
+  }
+
+  select.form-control {
+    border: 1px solid $black;
+    appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    background-image: url(chevron.svg);
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    padding-right: 40px;
+  }
+
+  textarea.form-control {
+    border: 1px solid $black;
+    color: $black;
+    min-height: 250px;
+    border-radius: 10px;
+  }
+
+  input.form-control.is-invalid {
+    color: $red;
+  }
+
+  .dateCode-invalid-feedback{
+    float: left;
+    margin-bottom: 25PX;
+  }
+  .invalid-feedback {
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: $red;
+  
+    &.show {
+      display: block !important;
+    }
+  }
+
+  .form-check {
+    position: relative;
+  }
+
+  input.form-control.is-valid ~ button.inline-submit {
+    color: $blue;
+
+    svg.chevron-full-color {
+      stroke: $blue;
+    }
+  }
+
+  button.inline-submit {
+    position: absolute;
+    padding-right: 30px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $black;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    background-color: transparent;
+
+    svg.chevron-full-color {
+      fill: transparent;
+      stroke: $black;
+      position: absolute;
+      right: -15px;
+      top: 10%;
+      transform: rotate(-90deg) translateY(-50%);
+    }
+  }
+
+  input.form-control.submitted ~ .inline-submit{
+    display: none;
+  }
+
+  span.submitted {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    svg {
+      width: 15px;
+      height: 12px;
+    }
+  }
+}
+
+input.form-check-input[type="checkbox"] {
+  opacity: 0;
+  z-index: 1;
+
+  &:checked ~ span.form-checkbox {
+    background-color: $black;
+    background-image: url('checkbox.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &:focus{
+    outline: 2px solid $blue;
+    opacity: 1;
+  }
+}
+
+input.form-check-input[type="radio"] {
+  opacity: 0;
+  z-index: 1;
+
+  &:checked ~ span.form-check-radio:after {
+    content: "";
+    position: absolute;
+    background-color: $black;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+}
+
+span.form-checkbox {
+  position: absolute;
+  background-color: $white;
+  border: solid 1px $black;
+  width: 14px;
+  height: 14px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
+span.form-check-radio {
+  position: absolute;
+  background-color: $white;
+  border: solid 1px $black;
+  width: 12px;
+  height: 12px;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+
+form.dark-form {
+  input.form-control,
+  input.form-control:focus,
+  input.form-control.is-valid{
+    background-color: $black;
+    border-color: $white;
+    color: $white;
+  }
+
+  input.form-control.is-invalid,
+  input.form-control.is-invalid:focus {
+    border-color: $white;
+    color: $red;
+  }
+
+  .form-group label {
+    color: $white;
+  }
+
+  button.inline-submit {
+    color: $white;
+
+    svg.chevron-full-color {
+      stroke: $white;
+    }
+  }
+}
+
+.form__message--success {
+  color: $blue;
+}
+
+.form__message--fail {
+  color: $red;
+}

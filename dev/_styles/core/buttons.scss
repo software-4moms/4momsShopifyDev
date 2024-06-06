@@ -1,0 +1,169 @@
+// stylelint-disable selector-no-qualifying-type
+
+/* ==========================================================================
+   Button Customization
+   ========================================================================== */
+
+/**
+ * Deliberately override BS4 buttons. Native BS4 button styling is too
+ * opinionated, and more hinderance than help. Most common UI elements
+ * will be set up with a "reverse" style to be used on dark backgrounds.
+ * In many cases, this style can be triggered EITHER by adding a `.reverse`
+ * class to the element itself OR any wrapper element.
+ */
+
+// Remove all unnecessary default styling
+button {
+  border: inherit;
+  background-color: inherit;
+  font: inherit;
+}
+
+%btn,
+.btn {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  cursor: pointer;
+  @include transition($btn-transition);
+
+  @include hover {
+    text-decoration: none;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: $btn-focus-box-shadow;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    opacity: $btn-disabled-opacity;
+    @include box-shadow(none);
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+
+    &:focus {
+      @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+    }
+  }
+
+  &.btn-primary {
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    background-color: #212122;
+    color: $white;
+    padding: 14px 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    &:hover {
+      background-color:#000;
+      outline-offset: 1px;
+      -webkit-box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+      box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+      letter-spacing: 0.07em;
+    }
+    &:active {
+      background-color:#83fff0;
+      color:#000;
+      -webkit-box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+      box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+      letter-spacing: 0.07em;
+    }
+    &:focus {
+      background-color:#83fff0;
+      color:#000;
+      -webkit-box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+      box-shadow: 0 5px 10px 5px rgba(1,1,1,.25);
+      letter-spacing: 0.07em;
+    }
+  }
+
+
+  &.btn-secondary {
+    font-size: 18px;
+    letter-spacing: 0.07em;
+    color: $black;
+    border-bottom: black solid 1px;
+    font-weight: $font-weight-normal;
+    text-decoration: none;
+
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    &:hover {
+      color: $purple;
+      border-bottom: 2px solid #ce00d9;
+    }
+    &:active {
+      color: $purple;
+    }
+    &:focus {
+      background-color: $white;
+    }
+  }
+  &.white-text{
+    color: $white !important;
+    text-decoration: none;
+  }
+}
+
+// Future-proof disabling of clicks on `<a>` elements
+a.btn.disabled,
+fieldset:disabled a.btn {
+  pointer-events: none;
+}
+
+/* Button sizing utilities
+ * ================================================================== */
+
+.btn-lg {
+  @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+}
+
+.btn-sm {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+
+  // Vertically space out multiple block buttons
+  + .btn-block {
+    margin-top: $btn-block-spacing-y;
+  }
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+/* Primary button types
+ * ================================================================== */
+
+/**
+ * Insert project-specific button types below.
+ */
+
+ .btn-link {
+  text-decoration: $btn-link-decoration;
+ }

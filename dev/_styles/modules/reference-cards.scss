@@ -1,0 +1,17 @@
+.reference-cards {
+  margin-top: 6px;
+}
+
+.reference-cards__col {
+  padding-left: 4px;
+  padding-right: 4px;
+
+  @include media-breakpoint-down("md") {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.collection-card--square {
+  margin-bottom: 0;
+}

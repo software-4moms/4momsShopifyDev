@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Custom project variables
+   ========================================================================== */
+
+/**
+ * Use this file to 1. collect custom project variables, and 2. override BS4
+ * default variables of the same names.
+ *
+ * TODO: Possibly separate into namespaced files as necessary.
+ */
+
+
+/* Colors
+ * ================================================================== */
+
+/**
+ * Use http://chir.ag/projects/name-that-color/ to generate color names.
+ * For this project, use explicit colors rather than percentages or
+ * dynamically-generated palettes. Never use relative color names like
+ * "darker, darkest, lighter, etc." There will ALWAYS be a darker gray
+ * added later, and these names are then rendered meaningless.
+ */
+ 
+// Standard
+$black:               #000;
+$white:               #fff;
+$gr1:                 #f0f0f7;
+$gr2:                 #dcdce0;
+$gr3:                 #E9E9E9;
+$gr4:                 #E2E2E2;
+$gr5:                 #737373;
+$gr6:                 #636363;
+$blue:                #127FAB;
+$red:                 #F01010;
+$arrow-bg:            $black;
+
+$colors: map-merge(
+  (
+    "white":        $white,
+    "gray-lighter": $gray-lighter,
+    "gray-light":   $gray-light,
+    "gray":         $gray,
+    "gray-dark":    $gray-dark,
+    "gray-darker":  $gray-darker,
+    "gray-darkest":  $gray-darkest,
+    "black":        $black,
+    "blue":         $blue,
+    "indigo":       $indigo,
+    "purple":       $purple,
+    "pink":         $pink,
+    "red":          $red,
+    "orange":       $orange,
+    "yellow":       $yellow,
+    "green":        $green,
+    "teal":         $teal,
+    "cyan":         $cyan,
+    "khaki":        $khaki,
+    "brown":        $brown,
+    "tan":          $tan,
+    "gr1":          $gr1,
+    "gr2":          $gr2,
+    "gr3":          $gr3,
+    "gr4":          $gr4,
+    "gr5":          $gr5,
+    "gr6":          $gr6
+  ),
+  $colors
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1340px,
+  xxl: 1430px
+);
+
+$largest-container-width: 1540px;
+/* Typography
+ * ================================================================== */
+
+// Type helpers
+$all-headers: h1, h2, h3, h4, h5, h6, ".h1", ".h2", ".h3", ".h4", ".h5", ".h6";
+$all-type-elements: $all-headers, p, a, li, em, strong, i, sup, label, span, select;
+
+$font-weight-normal: 300;
+$font-weight-bold: 700;
+
+
+/* Icons
+ * ================================================================== */
+
+// Type helpers
+$font-family-sans-serif:      "bc-novatica-cyr",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+$arrow-icon-length: 20px;
+$arrow-icon-width:  20px;
+
+
+// Quantity Adjuster
+// * ================================================================== */
+
+$quantity-adjuster-height: 40px;
+$quantity-adjuster-width: 100px;
+$quantity-adjuster-border-color: $black;
+
+
+// Swatch dots
+// * ================================================================== */
+$dot-active-border-color: $gr6;
+
+
+// Slideshow
+// * ================================================================== */
+$slideshow-dot-color: $gr4;
+$slideshow-dot-active-color: $gr6;
+$dot-padding: 5px;
+$dot-size: 46px;
+
+
+// Header
+// * ================================================================== */
+$header-height-base: 100px;
+$drawer-backdrop-opacity: 0.6;
+
+
+// Footer
+// * ================================================================== */
+$footer-padding-top: 95px;
+$footer-padding-bottom: 45px;
+$footer-social-icon-width: 22px;
+
+// Ajax Cart
+// * ================================================================== */
+$ajax-cart-width: 580px;
+$ajax-cart-header-margin: 30px 60px 0;
+$ajax-cart-header-padding-bottom: 34px;
+$ajax-cart-body-margin: 25px 60px;
+$ajax-cart-footer-margin: 0 60px 40px;
+
+// Buttons
+// * ================================================================== */
+$btn-link-decoration: underline;
+
+// Banner Panel
+// * ================================================================== */
+
+$banner-panel-padding-vertical-medium:   100px;
